@@ -6,13 +6,15 @@
   - [Repository Structure ](#repository-structure)
   - [Running The Python File](#runcode)
   - [Problem Statement: ](#aims)
-  - [Week Two Task - Statements - Rounding Calculation](#week-two-task)
-  - [Week Three Task - Variables - Concealed Account Number](#week-three-task)
-  - [Week Four Task - Controlling Flow - Calculation](#week-four-task)
-  - [Week Five Task - Data - Weekday Program<](#week-five-task)
-  - [Week Six Task - Functions - Newtons Square Root](#week-six-task)
-  - [Week Six Task - File - Character Counter](#week-seven-task)
-  - [Week Eight Task - MatPlotLib - Plot Task ](#week-eight-task)
+  - [Task One - Create Directory Structure](#task-one)
+  - [Task Two - Timestamps](#task-two)
+  - [Task Three - Formatting Timestamps](#task-three)
+  - [Task Four - Create Timestamped Files](#task-four)
+  - [Task Five - Download Today's Weather Data](#task-five)
+  - [Task Six - Timestamp The Data](#task-six)
+  - [Task Seven - Write The Script](#task-seven)
+  - [Task Eight - Notebook](#task-eight)
+  - [Task Nine - Pandas](#task-nine)
   - [Approach](#approach)
   - [Future Research ](#future-research)
   - [Contributors ](#contributors)
@@ -80,7 +82,7 @@ You might do that for this project as follows:
 4. As part of the brief was to have outputs of the analysis, I decided the best approach was to use sub plots to allow a number of graphs to be in a single image file as opposed to saving down each graph individually. 
    1. In the IPYNB file, where the analysis is carried out, I will have the analysis on each graph individually to make the project easier to interpret for the reader.
   
-<h2 align="center">Week Two Task - Statements - Rounding Calculation</h1><a name="week-two-task"></a>
+<h2 align="center">Task One - Create Directory Structure</h1><a name="task-one"></a>
 <p align="center">
   <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/f06ca7f6-7aae-4e7d-9049-16ce6ec6f8a5" alt="Banking">
 </p>
@@ -139,7 +141,7 @@ print(f'The sum of these is €{rounded_sum}.')
 ### References
 N/A
 
-<h2 align="center">Week Three Task - Variables - Concealed Account Number</h1><a name="week-three-task"></a>
+<h2 align="center">Task Two - Timestamps </h1><a name="task-two"></a>
 <p align="center">
   <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/67fd6bf2-fdb0-4ff9-9200-154d8061a728" alt="Banking">
 </p>
@@ -188,7 +190,7 @@ print(encrypted_acc_num) # Printing the calculated variable for validation
 ### References
 N/A
 
-<h2 align="center">Week Four Task - Controlling Flow - Calculation</h1><a name="week-four-task"></a>
+<h2 align="center">Task Three - Formatting Timestamps</h1><a name="task-three"></a>
 <p align="center">
   <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/905c347f-a163-4da6-b0c5-9eb7b00f3b36" alt="Banking">
 </p>
@@ -232,7 +234,7 @@ print(num_list) # Print out that new list
 ### References
 N/A
 
-<h2 align="center">Week Five Task - Data - Weekday Program</h1><a name="week-five-task"></a>
+<h2 align="center">Task Four - Create Timestamped Files</h1><a name="task-four"></a>
 <p align="center">
   <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/ebfe307d-e282-4efb-97de-a0b60aa86c18" alt="Banking">
 </p>
@@ -296,7 +298,7 @@ else: # Using an Else Statement
 
 I had a good idea from previous experience of how to go about the task but needed to remind myself of the structure for Key Value Pairs. Additionally, I needed to investigate the best way of returning the current day for the calculation.
 
-<h2 align="center">Week Six Task - Functions - Newtons Square Root</h1><a name="week-six-task"></a>
+<h2 align="center">Task Five - Download Today's Weather Data</h1><a name="task-five"></a>
 <p align="center">
   <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/a97465b7-798c-4f73-925c-d31b3eec5967" alt="Banking">
 </p>
@@ -352,7 +354,7 @@ print(f"Square root of {value} is approximately {square_root(value, init_est)}")
 6. **For adding in the function output to a print statement (2):** https://realpython.com/defining-your-own-python-function/
 
 
-<h2 align="center">Week Seven Task - File - Character Counter </h1><a name="week-seven-task"></a>
+<h2 align="center">Task Six - Timestamp The Data </h1><a name="task-six"></a>
 <p align="center">
   <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/ef5e64de-54dc-4dc9-8a73-6623b9930fe8" alt="Banking">
 </p>
@@ -420,7 +422,7 @@ I had used the Counter library previously, so again needed to refresh my memory 
 1. https://www.geeksforgeeks.org/python-frequency-of-each-character-in-string/
 
 
-<h2 align="center">Week Eight Task - MatPlotLib - Plot Task </h1><a name="week-eight-task"></a>
+<h2 align="center">Task Seven - Write The Script </h1><a name="task-seven"></a>
 <p align="center">
   <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/ac9b3566-f62f-4053-8679-95812e97bfb0" alt="Banking">
 </p>
@@ -461,6 +463,91 @@ plt.show() # Showing the plot
 
 ### Output<br>
 ![image](https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/d5bd9a07-9f38-41ba-bcc9-ecba4490a35b)
+
+<h2 align="center">Task Eight - Notebook </h1><a name="task-eight"></a>
+<p align="center">
+  <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/ac9b3566-f62f-4053-8679-95812e97bfb0" alt="Banking">
+</p>
+
+
+### Background<br>
+Write a program called plottask.py that displays a histogram of a normal distribution of a 1000 values with a mean of 5 and standard deviation of 2, and a plot of the function  h(x)=x^3 in the range 0 to 10, on the one set of axes.. 
+
+### Program Name <br>
+plottask.py
+
+### Program Outline<br>
+The program should:
+1. Display a histogram of a normal distribution of a 1000 values with a mean of 5 and standard deviation of 2.
+2. Plot of the function  h(x)=x^3 in the range 0 to 10.
+3. On one set of axes.
+
+### Code<br>
+```
+# Importing Libraries Required for the task
+import numpy as np
+import matplotlib.pyplot as plt 
+plot_data = np.random.normal(5, 2, 1000) # First Argument is Mean = 5/ Second Argument is Std Dev = 2 and Third Argument is the Size of the Array
+#Creating Values for 2nd Plot X Axis.
+x = np.arange(0, 10.1, 0.1)  #1st Argument = Start of the Values/ 2nd = End of the Values/ 3rd Step Size of the values
+y = x ** 3 # Creating the Y Values based on the function provided.
+plt.figure(figsize=(20, 10)) # Dictating the Width & Height in Inches
+plt.hist(plot_data, bins=15, color='green', label= 'Histogram Plot') # Creating the Histrogram/ 1st Arg = Data to Plot/ 2nd Arg Number of Bins in Graph/ 3rd Color Of Hist & Naming the plot 
+plt.plot(x, y, color='yellow', label='Function Plot') #Plotting the 2nd Function, setting color & Naming the Plot)
+plt.title('Histogram of Normal Distribution for Week 8 Task') #Setting Title of the Figure
+plt.xlabel('Value') #Setting Label of X Axis
+plt.ylabel('No. of Occurrences Of Values') #Setting Label of Y Axis
+plt.legend() # Showing the legend
+plt.show() # Showing the plot
+```
+### Sample Input<br>
+**N/A** <br>
+
+### Output<br>
+![image](https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/d5bd9a07-9f38-41ba-bcc9-ecba4490a35b)
+
+<h2 align="center">Task Nine - Pandas </h1><a name="task-nine"></a>
+<p align="center">
+  <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/ac9b3566-f62f-4053-8679-95812e97bfb0" alt="Banking">
+</p>
+
+
+### Background<br>
+Write a program called plottask.py that displays a histogram of a normal distribution of a 1000 values with a mean of 5 and standard deviation of 2, and a plot of the function  h(x)=x^3 in the range 0 to 10, on the one set of axes.. 
+
+### Program Name <br>
+plottask.py
+
+### Program Outline<br>
+The program should:
+1. Display a histogram of a normal distribution of a 1000 values with a mean of 5 and standard deviation of 2.
+2. Plot of the function  h(x)=x^3 in the range 0 to 10.
+3. On one set of axes.
+
+### Code<br>
+```
+# Importing Libraries Required for the task
+import numpy as np
+import matplotlib.pyplot as plt 
+plot_data = np.random.normal(5, 2, 1000) # First Argument is Mean = 5/ Second Argument is Std Dev = 2 and Third Argument is the Size of the Array
+#Creating Values for 2nd Plot X Axis.
+x = np.arange(0, 10.1, 0.1)  #1st Argument = Start of the Values/ 2nd = End of the Values/ 3rd Step Size of the values
+y = x ** 3 # Creating the Y Values based on the function provided.
+plt.figure(figsize=(20, 10)) # Dictating the Width & Height in Inches
+plt.hist(plot_data, bins=15, color='green', label= 'Histogram Plot') # Creating the Histrogram/ 1st Arg = Data to Plot/ 2nd Arg Number of Bins in Graph/ 3rd Color Of Hist & Naming the plot 
+plt.plot(x, y, color='yellow', label='Function Plot') #Plotting the 2nd Function, setting color & Naming the Plot)
+plt.title('Histogram of Normal Distribution for Week 8 Task') #Setting Title of the Figure
+plt.xlabel('Value') #Setting Label of X Axis
+plt.ylabel('No. of Occurrences Of Values') #Setting Label of Y Axis
+plt.legend() # Showing the legend
+plt.show() # Showing the plot
+```
+### Sample Input<br>
+**N/A** <br>
+
+### Output<br>
+![image](https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/d5bd9a07-9f38-41ba-bcc9-ecba4490a35b)
+
 
 **References**
 
