@@ -1,4 +1,4 @@
-# computer_infrastructure
+<h1 align="center">Computer Infrastructure</h1>
 
 ## Table of Contents
   - [Table of Contents](#table-of-contents)
