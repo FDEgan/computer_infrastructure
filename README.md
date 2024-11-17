@@ -291,7 +291,7 @@ I reran the command ten times to output 10 records to the text file showing the 
 Use the touch command to create an empty file with a name in the YYYYmmdd_HHMMSS.txt format. You can achieve this by embedding your date command in backticks ` into the touch command. You should no longer use redirection (>>) in this step.
 
 ### Files Created
-
+"20241117_16:41:30.txt"
 
 ### Inputs
 
@@ -307,7 +307,7 @@ To create (append) the formatted date to a new text file called formatted using 
 
 ### Outputs
 
-#### Task 3 - Empty Text file with the formatted date and time in the name of the file.
+#### Task 4 - Empty Text file with the formatted date and time in the name of the file.
 ![image](https://github.com/user-attachments/assets/57de4d92-a7fa-4a6e-b17a-8b2eb671c87a)
 
 
@@ -353,55 +353,70 @@ After calling the date command and wrapping it in backticks,I inputted the forma
   <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/a97465b7-798c-4f73-925c-d31b3eec5967" alt="Banking">
 </p>
 
+### Task
+Change to the data/weather directory. Download the latest weather data for the Athenry weather station from Met Eireann using wget. Use the -O <filename> option to save the file as weather.json. The data can be found at this URL: https://prodapi.metweb.ie/observations/athenry/today.
 
-### Background<br>
-Write a program that takes a positive floating-point number as input and outputs an approximation of its square root.
+### Files Created
 
-You should create a function called <tt>sqrt</tt> that does this. I am asking you to create your own sqrt function and not to use the built in functions x ** .5 or math.sqrt(x). This is to demonstrate that you can research and code a process (If you really needed the square root you would use one of the above methods). I suggest that you look at the newton method at estimating square roots. This is a more difficult task than some of the others, but will be marked equally, so only do as much work on this as you feel comfortable.
 
-### Program Name <br>
-squareroot.ipynb
+### Inputs
 
-### Program Outline<br>
-The program should:
-1. Takes a positive floating-point number as input and output an approximation of its square root.
-2. Use Newton's Square Root.
+To create (append) the formatted date to a new text file called formatted using the date command, I used the below commands:<br>
 
-### Example<br>
-python squareroot.py<br>
-Please enter a positive number: 14.5<br>
-The square root of 14.5 is approx. 3.8.<br>
+#### Task 5 - Navigating to the correct folder.
+![image](https://github.com/user-attachments/assets/4b855433-3a8f-44f0-a062-d69658b6c807)
+
+
+
+#### Task 5 - Using WGET command to get the latest weather data from Met Eireann for Athenry.
+![image](https://github.com/user-attachments/assets/f996edef-d319-40f5-9a95-21989bb5b193)
+
+
+### Outputs
+
+#### Task 5 - Terminal Output from using the WGET command.
+![image](https://github.com/user-attachments/assets/7f71e77d-64f5-42c7-8e86-2c3a3a10d907)
+
+
+#### Task 5 - JSON File created using the WGET command.
+![image](https://github.com/user-attachments/assets/4992006b-6644-43ca-9319-9733008f9c34)
+
+
+
+
+   
+### Folder Structure
+#### Before:
+
+![image](https://github.com/user-attachments/assets/06bf7ca9-2a1e-4c67-9776-72f573468a22)
+
+
+#### After:
+![image](https://github.com/user-attachments/assets/d810326e-4072-4079-a69c-dc2d23e2a2cb)
+
+
 
 ### Code<br>
 ```
-def square_root(value, init_est): # Creating function to take in number that we want the square root of and the first estimate we have
-    est = init_est # Creating an estimate variable which assigns the initial estimate as our estimate
-    updated_estimate = 0.5 * (est + value / est) # Creating a new variable that is equal to the value returned from Newton Square Root formula 
-    while updated_estimate != est: # While the new estimate is not equal to our last/ original estimate persist with the code in the loop
-        est = updated_estimate # Assign/ Reassign our estimate as the new estimate
-        updated_estimate =  (est + value / est) * 0.5 # Assign/ Reassign new estimate as the value returned using the Newton Square Root formula
+wget -O weather.json https://prodapi.metweb.ie/observations/athenry/today # Using WGT command to create a json file called weather pulling data from the Met Eireann API.
 
-    return round(updated_estimate,1) # Once the new estimate is equal to our estimate i.e. Our new estimate is equal to the value returned using the Newton Square Root formula then return the rounded new estimatez
-
-value = float(input("Enter the number you require the square root of: ")) # Prompting User to input Value
-init_est = float(input("Enter an estimation of square root of the number here: ")) # Prompting User to input Value
-print(f"Square root of {value} is approximately {square_root(value, init_est)}") # Printing the statement out
 ```
 
-### Sample Input<br>
-**Number/ Estimate:** 14.5/6 <br>
-
-### Output<br>
-![image](https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/a5807eb8-013a-4b4e-9697-201d4b71a0ca)
 
 
-**References**
-1. **Exploring how the Newtons Square Root Equation Works:** https://www.youtube.com/watch?v=FpOEx6zFf1o
-2. **Exploring how the Newtons Square Root Equation Works (2):** https://matt.coneybeare.me/coding-challenge-implement-a-square-root-function/
-3. **For Guiding how the Python Program Should Work i.e. The flow of the Calculation:** https://www.youtube.com/watch?v=xdlIFw5EM4w
-4. **For Guiding how the calculation could work:** https://www.geeksforgeeks.org/find-root-of-a-number-using-newtons-method/
-5. **For adding in the function output to a print statement:** https://blog.finxter.com/python-return-string-from-function/
-6. **For adding in the function output to a print statement (2):** https://realpython.com/defining-your-own-python-function/
+### Code Explanation
+
+The WGET command is used to retrieve files from the internet. The -O is called in order to ensure that the file is named weather.json as opposed to today, which is the file of the URL being queried. It is called the -O flag and means to output document or output file.
+
+The text proceeding after the -O flag, designates what the file should be named.
+
+The URL that proceeds the name of the file (weather.json) is the URL from which I want to retrieve the data.
+
+
+### References
+1. [https://www.geeksforgeeks.org/touch-command-in-linux-with-examples/](https://www.geeksforgeeks.org/wget-command-in-linux-unix/)
+2. https://www.gnu.org/software/wget/manual/wget.html
+3. Ian McLoughlin Class Notes
 
 
 <h2 align="center">Task Six - Timestamp The Data </h1><a name="task-six"></a>
