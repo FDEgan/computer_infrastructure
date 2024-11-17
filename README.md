@@ -182,7 +182,8 @@ To create output the current date and time to the timestamp directory, I used th
 
 #### After:
 
-![image](https://github.com/user-attachments/assets/78391a83-f907-4f74-bd04-5b49bcd780ec)
+![image](https://github.com/user-attachments/assets/f336fd35-76d6-4fa7-b3d4-fd882290f5ed)
+
 
 
 
@@ -190,6 +191,10 @@ To create output the current date and time to the timestamp directory, I used th
 ### Code<br>
 ```
 date >> now.txt # Using the date command to append the current date and time to the text file.
+
+```
+```
+touch test # Using the touch command to create a test file for the weather directory.
 
 ```
 
