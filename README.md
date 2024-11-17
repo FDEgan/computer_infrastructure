@@ -321,7 +321,8 @@ To create (append) the formatted date to a new text file called formatted using 
 
 #### After:
 
-![image](https://github.com/user-attachments/assets/7c02565e-46d2-4122-991a-fb4ef81e9de7)
+![image](https://github.com/user-attachments/assets/3e6fdf96-e2a4-4bed-a0c5-2311f16a2eba)
+
 
 
 
