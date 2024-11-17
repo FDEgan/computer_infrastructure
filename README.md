@@ -381,7 +381,8 @@ To create (append) the formatted date to a new text file called formatted using 
 #### Task 5 - JSON File created using the WGET command.
 ![image](https://github.com/user-attachments/assets/4992006b-6644-43ca-9319-9733008f9c34)
 
-
+#### Task 5 - Contents of JSON File created using the WGET command.
+![image](https://github.com/user-attachments/assets/351da544-e9e7-4e8b-b58c-b80110721d09)
 
 
    
