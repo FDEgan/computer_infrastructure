@@ -149,49 +149,63 @@ As the parent directory was already included, I did not need to use the -p flag 
   <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/67fd6bf2-fdb0-4ff9-9200-154d8061a728" alt="Banking">
 </p>
 
-### Background
-Bank account numbers can be stored as 10 character strings, for security reasons some applications only display the last 4 characters (with the other other characters replaced with Xs). 
+### Task
+Navigate to the data/timestamps directory. Use the date command to output the current date and time, appending the output to a file named now.txt. Make sure to use the >> operator to append (not overwrite) the file. Repeat this step ten times, then use the more command to verify that now.txt has the expected content.
 
-### Program Name <br>
-accounts.py
+### Files Created
+now.txt
 
-### Program Outline<br>
-The program should:
-*Read in a 10 character account number and output the account number with only the last 4 digits showing (and the first 6 digits replaced with Xs).*
+### Inputs
+To navigate to the timestamps sub directory,  I used the below code:<br>
 
-### Example<br>
-Please enter an 10 digit account number: 1234567890<br>
-XXXXXX7890<br>
+#### Task 2 - Navigating to Timestamp Sub-Directory
+![image](https://github.com/user-attachments/assets/79154f23-65d1-4027-9f8f-5e6dbd97f7da)
 
-### Extra<br>
-Modify the program to deal with account numbers of any length (yes that is a vague requirement, comment your assumptions)
+To create output the current date and time to the timestamp directory, I used the below command:<br>
 
-### Assumptions<br>
-1. If there is 4 digits or less, then it will show whatever number of digits were entered. Be it 1,2,3 or 4 as they are within the last 4 digits and so will not be encrpyted.
-2. To modidy it to take any length, we need to see how long the string length is.
-3. We need to use indexing to get the last 4 digits.
+#### Task 2 - Creating Output to output current date and time.
+![image](https://github.com/user-attachments/assets/79347796-bc18-47c7-af97-b928aaa02531)
+
+#### Task 2 - Rerunning command ten times.
+![image](https://github.com/user-attachments/assets/6b5884ce-e788-4579-a2f5-00b3faa0248d)
+
+### Outputs
+#### Task 2 - Output - Current Date & Time
+![image](https://github.com/user-attachments/assets/5668f466-2581-4604-b610-0ced068b3184)
+
+   
+### Folder Structure
+#### Before:
+
+![image](https://github.com/user-attachments/assets/49c9c9f8-12fa-488d-b1b7-ac7bf03f39e3)
+
+
+#### After:
+
+![image](https://github.com/user-attachments/assets/78391a83-f907-4f74-bd04-5b49bcd780ec)
+
+
+
 
 ### Code<br>
 ```
-account_number = input("Please enter a value: ") # Prompting user to enter account number
-num_leading_digits = len(account_number)-4 # Creating a variable to calculate number of leading digits before the last 4 digits
-print(num_leading_digits) # printing the number of leading digits for validation
-four_digits = account_number[-4:] # Creating variable to identify 4 ending digits of account number
-print(four_digits) # Printing the last four digits for validation
-lead_x = num_leading_digits * "X" # Creating variable to mask the number of leading digits with 'X'
-print(lead_x) # Printing the number of X's for validation
-encrypted_acc_num = lead_x + four_digits # creating the encrypted account number by adding the lead_x and four_digits
-print(encrypted_acc_num) # Printing the calculated variable for validation
+date >> now.txt # Using the date command to append the current date and time to the text file.
+
 ```
-### Sample Input<br>
-**Account Number:** 100009992828298<br>
 
-### Output<br>
-![image](https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/b5050a56-6ee7-4a71-bd80-201acdb7a98c)
 
+### Code Explanation
+The date command was to show the current date and time when the command was run. I used the >> operator to append the file as opposed to overwrite the file (>). 
+
+After calling the date command and using the append operator, I then stated I wanted to append it to a text file called now (now.txt)
+
+I reran the command ten times to output 10 records to the text file showing the current date and time.
 
 ### References
-N/A
+1. [https://www.geeksforgeeks.org/mkdir-command-in-linux-with-examples/](https://www.geeksforgeeks.org/date-command-linux-examples/)
+2. https://www.geeksforgeeks.org/how-to-create-a-text-file-using-the-command-line-in-linux/
+3. Ian McLoughlin Class Notes
+
 
 <h2 align="center">Task Three - Formatting Timestamps</h1><a name="task-three"></a>
 <p align="center">
