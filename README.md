@@ -5,7 +5,6 @@
   - [Overview](#overview)
   - [Repository Structure ](#repository-structure)
   - [Running The Python File](#runcode)
-  - [Problem Statement: ](#aims)
   - [Task One - Create Directory Structure](#task-one)
   - [Task Two - Timestamps](#task-two)
   - [Task Three - Formatting Timestamps](#task-three)
@@ -15,7 +14,6 @@
   - [Task Seven - Write The Script](#task-seven)
   - [Task Eight - Notebook](#task-eight)
   - [Task Nine - Pandas](#task-nine)
-  - [Approach](#approach)
   - [Future Research ](#future-research)
   - [Contributors ](#contributors)
   - [License ](#license)
@@ -61,85 +59,90 @@ The below files should be saved to the file path you entered:
 | Exploratory        | Bar Chart Calculated Variables.png, Bar Chart.png, CountPlot.png, Violin Plot.png                                    |
 | Summary            | background.png, description.png, variables.png                                                                       |
 | Text Files         | correlation_summary_statistics.txt, distribution_summary_statistics.txt, species_summary_statistics.txt, summary_statistics.txt  |
-   
-<h2 align="center">Problem Statement:</h1><a name="aims"></a>
-This project concerns the well-known Fisher’s Iris data set. You must research the data set and write documentation and code (in Python [1]) to investigate it. An online search for information on the data set will convince you that many people have investigated it previously. You are expected to be able to break this project into several smaller tasks that are easier to solve, and to plug these together after they have been completed.  
-
-You might do that for this project as follows:
-
-1. **Research the data set online and write a summary about it in your README.**
-2. **Download the data set and add it to your repository.**
-3. **Write a program called analysis.py that:**
-   1. Outputs a summary of each variable to a single text file,
-   2. Saves a histogram of each variable to png files, and
-   3. Outputs a scatter plot of each pair of variables.
-4. **Performs any other analysis you think is appropriate.**
-
-<h2 align="center">Approach</h1><a name="approach"></a>
-1. I wanted to focus on producing graphs and plots that had minimum clutter. This is the reasoning for removing redundant axes from the charts.
-2. I wanted to create a folder for each part of the analysis, so as to make it easier when the file is ran to have a clean file structure.
-3. I focused more on creating a small number of graphs that would allow for a strong analysis, as opposed to making alot of graphs that didn't give too much information.
-4. As part of the brief was to have outputs of the analysis, I decided the best approach was to use sub plots to allow a number of graphs to be in a single image file as opposed to saving down each graph individually. 
-   1. In the IPYNB file, where the analysis is carried out, I will have the analysis on each graph individually to make the project easier to interpret for the reader.
-  
+     
 <h2 align="center">Task One - Create Directory Structure</h1><a name="task-one"></a>
 <p align="center">
   <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/f06ca7f6-7aae-4e7d-9049-16ce6ec6f8a5" alt="Banking">
 </p>
 
-### Background
-When Banks are storing currency figures, they store them as integers (usually in cent). This is to avoid rounding errors.
+### Task
+Using the command line, create a directory (that is, a folder) named data at the root of your repository. Inside data, create two subdirectories: timestamps and weather.
 
-### Program Name
+### Files Created
 
-bank.ipynb
+**Parent Directory** - data <br>
+**Sub-Directories** -  timestamp & weather
 
-### Program Outline
-The program should:<br>
-1. Prompt the user and read in two money amounts (in cent)
-2. Add the two amounts
-3. Print out the answer in a human readable format with a euro sign and decimal point between the euro and cent of the amount
+
+
+### Inputs
+To create the parent directory for data I used the below code:<br>
+
+#### Task 1 - Input - Data Directory
+![Task 1 - Input A](https://github.com/user-attachments/assets/9d6700f6-6a91-4634-b878-badcadfe1298)
+
+
+To create the sub-directorie for weather and timestamps I used the below code:<br>
+
+#### Task 1 - Input - Timestamp & Weather Sub-Directory
+![Task 1 - Input B](https://github.com/user-attachments/assets/4c37f0b3-1917-47ed-8ac6-84cdb426d362)
+
+#### Cleaning Up Structure:
+![image](https://github.com/user-attachments/assets/6a2884c7-f264-477b-aeb6-91c0a7eaad55)
+
+
+### Outputs
+#### Task 1 - Output - Data Directory
+![Task 1 - Output A](https://github.com/user-attachments/assets/d0afd199-071c-4c39-8a09-77e4139b2c2e)
+
+#### Task 1 - Output - Timestamp & Weather Sub-Directory
+![Task 1 - Output B](https://github.com/user-attachments/assets/a81f2548-19f9-4066-8721-39350f232efe)
    
-### Example
-Enter Amount 1 (in cent): 65<br>
-Enter Amount 2 (in cent): 180<br>
-The sum of these is €2.45<br>
+### Folder Structure
+#### Before:
 
-### Advice<br>
-There is a bit in this, break it down into smaller parts, for example read in an integer first, (and print it back out again, then do some arithmetic to it and print, then read in a second one and add the two, and only then look at the formatting of the answer. of course there are many ways of doing this.
+![Folder Before](https://github.com/user-attachments/assets/81f30b50-57cf-4522-95dd-96ae431797fc)
+
+#### After:
+
+![image](https://github.com/user-attachments/assets/6daebf92-9db0-45e3-b267-a02ce20a22f2)
+
+Following review of the structure of the repository, I decided I did not need the "Tasks" or "Project" for the purpose of the assignment so removed them. <br>
+
+![image](https://github.com/user-attachments/assets/4123a16a-5ab8-4d5c-ae42-fdfb302d38b5)
+
+
 
 ### Code<br>
 ```
-amount_1 = user_input = int(input("Enter an amount: ")) # Prompting user to enter an amount)
-amount_2 = user_input = int(input("Enter an amount: ")) # Prompting user to enter an amount)
-```
-```
-cent_sum = amount_1 + amount_2 # Creating a variable called cent_sum that adds amount_1 & amount_2 variables
-```
-```
-print(cent_sum) # Printing the variable that sums the amount_1 & amount_2 variables
-```
-```
-euro_sum = (cent_sum/100) # Creating a variable called euro_sum that divides cent_sum variable by 100 to return € value
-print(euro_sum) # Printing the euro_sum variable
-```
-```
-rounded_sum = round(euro_sum,2) # Creating a variable to round the euro_sum to 2 decimal places
-print(rounded_sum) # Printing the rounded_sum variable
-```
-```
-print(f'The sum of these is €{rounded_sum}.')
-```
-### Sample Input<br>
-**Amount1:** 98<br>
-**Amount1:** 34<br>
+mkdir data # To create the Data Directory at the root of the repository
 
-### Output<br>
-![Program Output](https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/f01f22ba-bb4d-4e97-83b7-5ae7ecd1b4fa)
+```
 
+```
+mkdir data/timestamps data/weather # To create the sub directories inside the data directory for the timestamps and weather folders.
+
+```
+
+
+```
+rm Tasks # Remove Tasks folder.
+rm Project # Remove Project folder.
+
+```
+
+### Code Explanation
+The mkdir command was used to make the data directory/ folder. The mkdir is a command used to make a directory in a file system.
+
+You first call the mkdir command and following this you input the name of the directory you want to make.
+
+To create the sub-directories, the mkdir command can be used with the name of the parent directory followed by a forward slash and the name of the sub directory.
+
+As the parent directory was already included, I did not need to use the -p flag to create the parent directory.
 
 ### References
-N/A
+1. https://www.geeksforgeeks.org/mkdir-command-in-linux-with-examples/
+2. Ian McLoughlin Class Notes
 
 <h2 align="center">Task Two - Timestamps </h1><a name="task-two"></a>
 <p align="center">
