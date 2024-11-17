@@ -287,64 +287,65 @@ I reran the command ten times to output 10 records to the text file showing the 
   <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/ebfe307d-e282-4efb-97de-a0b60aa86c18" alt="Banking">
 </p>
 
-### Background<br>
-Write a program that outputs whether or not today is a weekday. (The program should be called weekday.py)
+### Task
+Use the touch command to create an empty file with a name in the YYYYmmdd_HHMMSS.txt format. You can achieve this by embedding your date command in backticks ` into the touch command. You should no longer use redirection (>>) in this step.
 
-### Program Name <br>
-weekday.py
+### Files Created
 
-### Program Outline<br>
-The program should:
-1.If its a weekday return: *Yes, unfortunately today is a weekday.*
-1.If its the weekend return: *It is the weekend, yay!*
 
-### Example<br>
-An example of running this program on a Thursday is given below.
+### Inputs
 
-$ python weekday.py
-Yes, unfortunately today is a weekday.
+To create (append) the formatted date to a new text file called formatted using the date command, I used the below commands:<br>
 
-An example of running it on a Saturday is as follows:
+#### Task 4 - Navigating to the correct folder.
+![image](https://github.com/user-attachments/assets/bc2c609d-f6d9-4fa5-abdb-bac722245592)
 
-$ python weekday.py
-It is the weekend, yay!
+
+#### Task 4 - Creating the formatted date and time to the name of the file using backticks.
+![image](https://github.com/user-attachments/assets/a141e653-b6f8-4eb1-8743-23747dcff0bc)
+
+
+### Outputs
+
+#### Task 3 - Empty Text file with the formatted date and time in the name of the file.
+![image](https://github.com/user-attachments/assets/57de4d92-a7fa-4a6e-b17a-8b2eb671c87a)
+
+
+
+   
+### Folder Structure
+#### Before:
+
+![image](https://github.com/user-attachments/assets/fc7ac9c4-fe9b-4f43-a8a8-282fbc652921)
+
+
+#### After:
+
+![image](https://github.com/user-attachments/assets/7c02565e-46d2-4122-991a-fb4ef81e9de7)
+
+
 
 ### Code<br>
 ```
-from datetime import date # Importing Library
-todays_date = date.today() # Creating a date variable that is Todays Date
-todays_date.weekday() # Using weekday function to return the weekday value of todays date
-today = todays_date.weekday() # Creating a variable of the weekday variable that will be used to query key value pairs
-print(today) # Validating Output
+touch  `date +"%Y%m%d_%H:%M:%S".txt # Creating the text file using touch and the date command with the desired formatting of the file name as yyyy/mm/dd_hh/mm/ss
 
-day_of_week = {
-    '0': 'Weekday', #Monday
-    '1': 'Weekday', #Tuesday
-    '2': 'Weekday', #Wednesday
-    '3': 'Weekday', #Thursday
-    '4': 'Weekday', #Friday
-    '5': 'Weekend', #Saturday
-    '6': 'Weekend', #Sunday
-} # Creating Key Value Pairs of of the weekday value and if its a weekend/ weekday
-todays_weekday_is = day_of_week[str(today)] # Creating a variable that reads if its a weekday/weekend
-print(todays_weekday_is) # Validating Output
-if today < 4: # Printing validation statement
-    print(f"Yes, unfortunately today is a {todays_weekday_is}. ") # Using an if statement, where if the day value is less then 4 it prints this statement i.e its not Friday/ Saturday or Sunday
-else: # Using an Else Statement
-    print(f"It is the {todays_weekday_is}, yay!. ") # If the value is greater than 4 it prints this statement i.e. it is Friday/ Saturday or Sunday
 ```
-### Sample Input<br>
-**Date Ran:** Monday 29th April <br>
 
-### Output<br>
-![image](https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/4a3f686f-f51a-4847-b02a-4fec8beaaa02)
+
+
+### Code Explanation
+
+The touch command is used to create a new empty file in this instance but it can also be used to update or modify the timestamps of an existing file.
+
+
+The date command was to show the current date and time when the command was run. By wrapping the date command in backticks, the output is passed to the touch command for naming the file. 
+
+After calling the date command and wrapping it in backticks,I inputted the formatting I desired for the date and time the same as for task 3.
+
 
 ### References
-**Getting the Current Date:** https://www.geeksforgeeks.org/get-current-date-using-python/ <br>
-**Creating Key Value Pairs:** https://www.mygreatlearning.com/blog/python-dictionary-append/ <br>
-                              https://www.geeksforgeeks.org/add-a-keyvalue-pair-to-dictionary-in-python/ <br>
-
-I had a good idea from previous experience of how to go about the task but needed to remind myself of the structure for Key Value Pairs. Additionally, I needed to investigate the best way of returning the current day for the calculation.
+1. https://www.geeksforgeeks.org/touch-command-in-linux-with-examples/
+2. Ian McLoughlin Class Notes
 
 <h2 align="center">Task Five - Download Today's Weather Data</h1><a name="task-five"></a>
 <p align="center">
