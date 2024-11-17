@@ -218,43 +218,69 @@ I reran the command ten times to output 10 records to the text file showing the 
 </p>
 
 
-### Background<br>
-Write a program, called collatz.py, that asks the user to input any positive integer and outputs the successive values of the following calculation. At each step calculate the next value by taking the current value and, if it is even, divide it by two, but if it is odd, multiply it by three and add one. Have the program end if the current value is one.
+### Task
+Run the date command again, but this time format the output using YYYYmmdd_HHMMSS (e.g., 20261114_130003 for 1:00:03 PM on November 14, 2026). Refer to the date man page (using man date) for more formatting options. (Press q to exit the man page). Append the formatted output to a file named formatted.txt.
 
-### Program Name <br>
-collatz.py
+### Files Created
+formatted.txt
 
-### Program Outline<br>
-The program should:
-1.Write a program, called collatz.py, that asks the user to input any positive integer and outputs the successive values of the following calculation.
-1.At each step calculate the next value by taking the current value and, if it is even, divide it by two, but if it is odd, multiply it by three and add one.
-1.Have the program end if the current value is one.
+### Inputs
 
-### Example<br>
-Please enter a positive integer: 10<br>
-10 5 16 8 4 2 1<br>
+To create (append) the formatted date to a new text file called formatted using the date command, I used the below commands:<br>
+
+#### Task 3 - Navigating to the correct folder.
+![image](https://github.com/user-attachments/assets/a88d177e-a0e2-4b9e-9414-0fb9466d5c98)
+
+#### Task 3 - Creating/Appending the formatted date and time.
+![image](https://github.com/user-attachments/assets/795c9b55-4e2f-41e8-b947-60df6ddfb3c1)
+
+### Outputs
+
+#### Task 3 - Formatted Date & Time.
+![image](https://github.com/user-attachments/assets/22f6bd2c-3ea4-49f9-be10-5713caf7f417)
+
+
+   
+### Folder Structure
+#### Before:
+
+![image](https://github.com/user-attachments/assets/bd33697f-d60a-4a12-9d0f-cfa2baa71c10)
+
+
+#### After:
+
+![image](https://github.com/user-attachments/assets/145cf5ed-0877-4089-86f2-7d3365a510a2)
+
 
 ### Code<br>
 ```
-int = user_input = int(input("Enter an integer: ")) # Prompting user to enter an integer)
-num_list = [int] #Creating a new list that will take in the integer I chose
-while int != 1: # Using a while loop to dictate, when the value is not 1 to persist through the loop
-    if int % 2 == 0: # Using a modulo to see if the value is odd or even - This is in case the value is even
-        int = int // 2 # When value is even, divide the value by 2
-    else: # In case the value is not even
-        int = 3 * int + 1 # Logic for when the value is odd. Multiply by 3 and add 1
-    num_list.append(int) #append the value to the new list I created
-print(num_list) # Print out that new list
+date +%Y/%m/%d_%H:%M:%S >> formatted.txt Using the Date command to create/amend the current date and time in a format of yyyy/mm/dd_hh/mm/ss
+
 ```
-### Sample Input<br>
-**Integer:** 10<br>
 
-### Output<br>
-![image](https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/5ff8e0b2-1fc3-4ff3-9f08-9690eec66c3e)
 
+
+### Code Explanation
+The date command was to show the current date and time when the command was run. I used the >> operator to append the file as opposed to overwrite the file (>). 
+
+After calling I inputted the formatting I desired for the date and time. The "%Y", "%m", "%d" etc are known as date and time ormat specifiers or date formatting directives.
+
+- %Y: Denotes the Year to 4 digits e.g 2024
+- %m: Denotes the Month to 2 digits e.g 11 (November) 
+- %d: Denotes the Day of the month in 2 digits e.g 17 (17th)
+- %H: Denotes the Hour using the 24-hour format e.g 15 (3pm)
+- %M: Denotes the Minute e.g 28
+- %S: Denotes the Second e.g 25
+
+Following inputting the desired formatting, I then stated I wanted to append it to a text file called formatted (formatted.txt)
+
+I reran the command ten times to output 10 records to the text file showing the current date and time formatted in yyyy/mm/dd_hh/mm/ss.
 
 ### References
-N/A
+1. https://www.geeksforgeeks.org/date-command-linux-examples/
+2. Ian McLoughlin Class Notes
+
+
 
 <h2 align="center">Task Four - Create Timestamped Files</h1><a name="task-four"></a>
 <p align="center">
