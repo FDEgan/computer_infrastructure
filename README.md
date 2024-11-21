@@ -424,69 +424,74 @@ The URL that proceeds the name of the file (weather.json) is the URL from which 
   <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/ef5e64de-54dc-4dc9-8a73-6623b9930fe8" alt="Banking">
 </p>
 
-### Background<br>
-Write a program that reads in a text file and outputs the number of e's it contains. Think about what is being asked here, document any assumptions you are making.
+### Task
+Modify the command from Task 5 to save the downloaded file with a timestamped name in the format YYYYmmdd_HHMMSS.json.
 
-### Program Name <br>
-counter.py
+### Files Created
 
-### Program Outline<br>
 
-The program should:
-1. Take the filename from an argument on the command line. I have not shown you how to do this, you need to look it up.
+### Inputs
+
+To create (append) the formatted date to a new text file called formatted using the date command, I used the below commands:<br>
+
+#### Task 6 - Navigating to the correct folder.
+![image](https://github.com/user-attachments/assets/f297430b-ad57-4051-8edb-71b9b0beefc6)
+
+
+#### Task 6 - Using WGET command to get the latest weather data from Met Eireann for Athenry.
+![image](https://github.com/user-attachments/assets/f996edef-d319-40f5-9a95-21989bb5b193)
+
+
+### Outputs
+
+#### Task 6 - Terminal Output from using the WGET command.
+![image](https://github.com/user-attachments/assets/aba49bdc-aef6-412c-b213-4b1257d9cf9c)
+
+
+#### Task 6 - JSON File created using the WGET command.
+![image](https://github.com/user-attachments/assets/d3560df9-136b-4b76-9ebd-a47d51f4c6dc)
+
+
+#### Task 6 - Contents of JSON File created using the WGET command.
+![image](https://github.com/user-attachments/assets/d329914d-700c-4a55-8fb0-28bac362f907)
+
+
+
    
-### Example<br>
-python es.py moby-dick.txt<br>
-116960<br>
+### Folder Structure
+#### Before:
+
+![image](https://github.com/user-attachments/assets/46e4cb66-e246-4e71-b027-d34cce4b031d)
+
+
+#### After:
+![image](https://github.com/user-attachments/assets/897528ac-76ff-4345-86b1-e7500c178545)
+
 
 ### Code<br>
 ```
-from collections import Counter # Importing Libraries
-text = input("Enter the file path: ") # Getting user to input file location for script
-char_to_count = input("Enter the character you want to count: ") # Getting user to identify character they want to count
-try:
-    with open(text, 'r') as file: # Opening the file in read mode
-        text = file.read() # Creating a variable called text and making that read the file specified
-        num_of_instances = Counter(text) # Using the counter function to count the occurrence of all characters in the text
-        count_of_letter = num_of_instances[char_to_count] # Specifying that I want to count the character the user inputted
-        print("Number of occurrences in the text:", count_of_letter) # Printing out the occurence of the letter specified
-except FileNotFoundError: # Creating an error for when the file was not found
-    print("This file was not found. Can you make sure the correct file path is being used.")
-except IsADirectoryError: # Creating an error for when file path is not correct
-    print("The file path you provided is a directory and not a path to a file. Please recheck the file path.")
-except Exception as e:  # Creating an error for when script runs into an exception when running.
-    print("An error occurred:",e)
+wget -O `date +"%Y%m%d_%H-%M-%S"`.txt https://prodapi.metweb.ie/observations/athenry/today # Using WGET command to create a json file called weather pulling data from the Met Eireann API. Using the date command to input the current date and time to name the file.
+
 ```
-### Sample Input<br>
-**Text File Used:** Moby Dick <br>
-
-### Output<br>
-![image](https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/3f61f313-3a1a-4818-86aa-5e0736df5e8d)
 
 
 
-### Assumptions<br>
-1. We would only be reading in text files from a folder on the users computer.
-2. It may be that we want to see the occurence of different characters as opposed to just "e".
-3. That only the three error exceptions listed in the file were adequate for the intended usage of the file.
+### Code Explanation
+
+The WGET command is used to retrieve files from the internet. The -O is called in order to ensure that the file is named weather.json as opposed to today, which is the file of the URL being queried. It is called the -O flag and means to output document or output file.
+
+The text proceeding after the -O flag, designates what the file should be named.
+
+In this case the date command is used to dictate to the name of the file. By wrapping the date command in backticks, the output is used for naming the file. 
+
+The URL that proceeds the name of the file (weather.json) is the URL from which I want to retrieve the data.
+
 
 ### References
-During my masters I had designed a very similar piece of code, so had a good idea of how the problem should be tackled.
-
-I had not previously needed to deal with errors. So for the errors I used the below to help:
-1. **File Not Found:** https://www.geeksforgeeks.org/why-am-i-getting-a-filenotfounderror-in-python/
-2. **Exception:** https://docs.python.org/3/tutorial/errors.html
-3. **Directory Error:** https://docs.python.org/3/library/exceptions.html
-
-For reading in files I needed to refresh my memory. So for the reading in files I used the below to help:
-1. Reading in Files: https://www.w3schools.com/python/python_file_open.asp
-2. Reading in Files: https://www.geeksforgeeks.org/reading-writing-text-files-python/
-3. Reading in Files: https://realpython.com/read-write-files-python/
-
-I had used the Counter library previously, so again needed to refresh my memory so relied on the below:
-1. https://www.geeksforgeeks.org/python-frequency-of-each-character-in-string/
-
-
+1. [https://www.geeksforgeeks.org/touch-command-in-linux-with-examples/](https://www.geeksforgeeks.org/wget-command-in-linux-unix/)
+2. https://www.gnu.org/software/wget/manual/wget.html
+3. Ian McLoughlin Class Notes
+   
 <h2 align="center">Task Seven - Write The Script </h1><a name="task-seven"></a>
 <p align="center">
   <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/ac9b3566-f62f-4053-8679-95812e97bfb0" alt="Banking">
