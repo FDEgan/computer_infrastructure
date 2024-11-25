@@ -356,7 +356,7 @@ After calling the date command and wrapping it in backticks,I inputted the forma
 Change to the data/weather directory. Download the latest weather data for the Athenry weather station from Met Eireann using wget. Use the -O <filename> option to save the file as weather.json. The data can be found at this URL: https://prodapi.metweb.ie/observations/athenry/today.
 
 ### Files Created
-
+weather.json
 
 ### Inputs
 
@@ -428,7 +428,7 @@ The URL that proceeds the name of the file (weather.json) is the URL from which 
 Modify the command from Task 5 to save the downloaded file with a timestamped name in the format YYYYmmdd_HHMMSS.json.
 
 ### Files Created
-
+20241121_215517.json
 
 ### Inputs
 
@@ -470,7 +470,7 @@ To create (append) the formatted date to a new text file called formatted using 
 
 ### Code<br>
 ```
-wget -O `date +"%Y%m%d_%H-%M-%S"`.txt https://prodapi.metweb.ie/observations/athenry/today # Using WGET command to create a json file called weather pulling data from the Met Eireann API. Using the date command to input the current date and time to name the file.
+wget -O `date +"%Y%m%d_%H-%M-%S"`.json https://prodapi.metweb.ie/observations/athenry/today # Using WGET command to create a json file called weather pulling data from the Met Eireann API. Using the date command to input the current date and time to name the file.
 
 ```
 
@@ -498,41 +498,102 @@ The URL that proceeds the name of the file (weather.json) is the URL from which 
 </p>
 
 
-### Background<br>
-Write a program called plottask.py that displays a histogram of a normal distribution of a 1000 values with a mean of 5 and standard deviation of 2, and a plot of the function  h(x)=x^3 in the range 0 to 10, on the one set of axes.. 
+### Task
+Write a bash script called weather.sh in the root of your repository. This script should automate the process from Task 6, saving the weather data to the data/weather directory. Make the script executable and test it by running it.
 
-### Program Name <br>
-plottask.py
+### Files Created
+weather.sh
+20241125_223027.json
 
-### Program Outline<br>
-The program should:
-1. Display a histogram of a normal distribution of a 1000 values with a mean of 5 and standard deviation of 2.
-2. Plot of the function  h(x)=x^3 in the range 0 to 10.
-3. On one set of axes.
+### Inputs
+
+
+#### Task 7 - Creating Weather.sh script.
+![image](https://github.com/user-attachments/assets/f297430b-ad57-4051-8edb-71b9b0beefc6)
+
+
+#### Task 7 - Writing Script to be ran.
+![image](https://github.com/user-attachments/assets/d18fab66-957d-4b57-b40d-bf45f4b101f3)
+
+
+#### Task 7 - Making the Script executable.
+![image](https://github.com/user-attachments/assets/86d256fa-3348-4648-8e40-551745a8444b)
+
+
+
+
+### Outputs
+
+#### Task 7 - Script Created Called weather.sh.
+![image](https://github.com/user-attachments/assets/435ef98c-c9dc-4c52-af76-7cdcb868e6bf)
+
+
+#### Task 7 - Running the Script.
+![image](https://github.com/user-attachments/assets/d3560df9-136b-4b76-9ebd-a47d51f4c6dc)
+
+
+#### Task 7 - Terminal Output.
+![image](https://github.com/user-attachments/assets/6191e507-67a1-487b-8334-37aec298d398)
+
+
+#### Task 7 - File Created.
+![image](https://github.com/user-attachments/assets/e4caa049-0edd-4803-9b07-8e06a76afb0c)
+
+#### Task 7 - Contenets of File Created.
+![image](https://github.com/user-attachments/assets/de604d6e-99d0-4fc0-a6af-e1b38c46d45a)
+
+
+
+   
+### Folder Structure
+#### Before:
+
+![image](https://github.com/user-attachments/assets/a1787224-3e8e-4f93-bcf8-712eb9029d12)
+
+
+
+#### After:
+![image](https://github.com/user-attachments/assets/e4caa049-0edd-4803-9b07-8e06a76afb0c)
+
 
 ### Code<br>
-```
-# Importing Libraries Required for the task
-import numpy as np
-import matplotlib.pyplot as plt 
-plot_data = np.random.normal(5, 2, 1000) # First Argument is Mean = 5/ Second Argument is Std Dev = 2 and Third Argument is the Size of the Array
-#Creating Values for 2nd Plot X Axis.
-x = np.arange(0, 10.1, 0.1)  #1st Argument = Start of the Values/ 2nd = End of the Values/ 3rd Step Size of the values
-y = x ** 3 # Creating the Y Values based on the function provided.
-plt.figure(figsize=(20, 10)) # Dictating the Width & Height in Inches
-plt.hist(plot_data, bins=15, color='green', label= 'Histogram Plot') # Creating the Histrogram/ 1st Arg = Data to Plot/ 2nd Arg Number of Bins in Graph/ 3rd Color Of Hist & Naming the plot 
-plt.plot(x, y, color='yellow', label='Function Plot') #Plotting the 2nd Function, setting color & Naming the Plot)
-plt.title('Histogram of Normal Distribution for Week 8 Task') #Setting Title of the Figure
-plt.xlabel('Value') #Setting Label of X Axis
-plt.ylabel('No. of Occurrences Of Values') #Setting Label of Y Axis
-plt.legend() # Showing the legend
-plt.show() # Showing the plot
-```
-### Sample Input<br>
-**N/A** <br>
 
-### Output<br>
-![image](https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/d5bd9a07-9f38-41ba-bcc9-ecba4490a35b)
+```
+touch weather.sh # Creating the weather.sh script
+```
+```
+wget -O `date +"%Y%m%d_%H-%M-%S"`.txt https://prodapi.metweb.ie/observations/athenry/today # Using WGET command to create a json file called weather pulling data from the Met Eireann API. Using the date command to input the current date and time to name the file.
+
+```
+```
+chmod u+x ./weather.sh # Making the file executable
+```
+
+```
+./weather.sh # Running the script
+```
+
+### Code Explanation
+
+The Touch command was used to create the script called weather.sh
+
+The script contains the WGET command used in task 6. 
+
+The WGET command is used to retrieve files from the internet. The -O is called in order to ensure that the file is named weather.json as opposed to today, which is the file of the URL being queried. It is called the -O flag and means to output document or output file.
+
+The text proceeding after the -O flag, designates what the file should be named.
+
+In this case the date command is used to dictate to the name of the file. By wrapping the date command in backticks, the output is used for naming the file. 
+
+The URL that proceeds the name of the file (weather.json) is the URL from which I want to retrieve the data.
+
+The #!/bin/bash is used at the top of the script to indicate the interpreter that should be used to run the script. The #!/ is used to designate that the file is a script and should be interpreted by the program that has been stated. The /bin/bash is the full path to the Bash shell, to be used as the program in this script. The /bin/bash is a popular command-line interpreter.
+
+### References
+1. [https://www.geeksforgeeks.org/touch-command-in-linux-with-examples/](https://www.geeksforgeeks.org/wget-command-in-linux-unix/)
+2. https://www.gnu.org/software/wget/manual/wget.html
+3. https://www.geeksforgeeks.org/shell-scripting-define-bin-bash/
+4. Ian McLoughlin Class Notes
 
 <h2 align="center">Task Eight - Notebook </h1><a name="task-eight"></a>
 <p align="center">
