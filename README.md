@@ -509,7 +509,8 @@ weather.sh
 
 
 #### Task 7 - Creating Weather.sh script.
-![image](https://github.com/user-attachments/assets/f297430b-ad57-4051-8edb-71b9b0beefc6)
+![image](https://github.com/user-attachments/assets/8ff1c59c-b2d8-4d01-b1f5-563a5cd9ee89)
+
 
 
 #### Task 7 - Writing Script to be ran.
@@ -520,16 +521,16 @@ weather.sh
 ![image](https://github.com/user-attachments/assets/86d256fa-3348-4648-8e40-551745a8444b)
 
 
+#### Task 7 - Running the Script.
+![image](https://github.com/user-attachments/assets/dd8712d2-a597-42d4-9c36-57f9b40da081)
+
+
 
 
 ### Outputs
 
 #### Task 7 - Script Created Called weather.sh.
 ![image](https://github.com/user-attachments/assets/435ef98c-c9dc-4c52-af76-7cdcb868e6bf)
-
-
-#### Task 7 - Running the Script.
-![image](https://github.com/user-attachments/assets/d3560df9-136b-4b76-9ebd-a47d51f4c6dc)
 
 
 #### Task 7 - Terminal Output.
@@ -539,7 +540,7 @@ weather.sh
 #### Task 7 - File Created.
 ![image](https://github.com/user-attachments/assets/e4caa049-0edd-4803-9b07-8e06a76afb0c)
 
-#### Task 7 - Contenets of File Created.
+#### Task 7 - Contents of File Created.
 ![image](https://github.com/user-attachments/assets/de604d6e-99d0-4fc0-a6af-e1b38c46d45a)
 
 
