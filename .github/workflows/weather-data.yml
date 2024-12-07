@@ -7,11 +7,16 @@ on:
 
 jobs:
   fetch_weather:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Specify Ubuntu virtual machine for the action
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - name: Checkout repository code
+      uses: actions/checkout@v3  # This clones your repository
 
     - name: Print test message
       run: echo "The workflow has run successfully!"
+
+    - name: Run weather.sh script
+      run: |
+      
+        ./weather.sh         # Run the script
