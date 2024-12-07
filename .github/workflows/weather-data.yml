@@ -7,49 +7,42 @@ on:
 
 jobs:
   fetch_weather:
-    runs-on: ubuntu-latest  # Stating I want the Ubuntu Virtual Machine to be used for the action.
+    runs-on: ubuntu-latest  # Use Ubuntu VM for the action
 
     steps:
     - name: Checkout repository code
-      uses: actions/checkout@v3  # Checkout the current repository where the workflow is located
+      uses: actions/checkout@v3  # Checkout the repository code
 
-    - name: List files in the current directory
+    - name: List files in the directory (Debugging)
       run: |
-        ls -al  # List files to confirm weather.sh is in the root of the repository
+        ls -al  # List files to ensure `weather.sh` is present
 
-    - name: Check permissions of weather.sh
+    - name: Check if wget is installed (Debugging)
       run: |
-        ls -l weather.sh  # Check permissions to confirm if it's executable
-        chmod +x weather.sh  # Make sure it's executable
+        wget --version  # Ensure wget is installed in the runner
+
+    - name: Ensure the script is executable
+      run: |
+        chmod +x weather.sh  # Make sure weather.sh is executable
 
     - name: Run weather.sh script
       run: |
-        ./weather.sh  # Run the script
+        ./weather.sh  # Run the weather script
 
-    - name: Check git status
+    - name: Check git status (Debugging)
       run: |
-        git status  # Check if there are any changes in the repo
+        git status  # Check if there are any changes after the script runs
 
-    - name: List files in the directory
+    - name: List files after script runs
       run: |
-        ls -al  # Check if the weather_data.json file is generated/updated
+        ls -al  # List files to see if the .json file was created
 
-    - name: Print weather data file
-      run: |
-        cat weather_data.json  # Output the contents of the weather data file to verify it's populated
-
-    - name: Add weather data to commit
-      run: |
-        git add weather_data.json  # Adding the weather data file
-
-    - name: Commit weather data
+    - name: Commit and push weather data
       run: |
         git config --global user.name "Barry Egan"
         git config --global user.email "g00425649@atu.ie"
-        git commit -m "Updated weather data" || echo "No changes to commit"  # Handle no changes gracefully
-
-    - name: Push weather data to repository
-      run: |
+        git add *.json  # Add any .json files created by the script
+        git commit -m "Updated weather data" || echo "No changes to commit"
         git push
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Adding authentication
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub token for authentication
