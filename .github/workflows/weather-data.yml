@@ -34,3 +34,5 @@ jobs:
           git add .
           git commit -m "Update weather data"
           git push origin main
+    env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub provides this token automatically for authentication
