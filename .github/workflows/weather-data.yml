@@ -2,16 +2,22 @@ name: Fetch Weather Data
 
 on:
   schedule:
-    - cron: '0 10 * * *'  # Run daily at 10 AM UTC
-  workflow_dispatch:  # Allow manual trigger of the workflow
+    - cron: '0 10 * * *'  # Indicating to run the file daily at 10am
+  workflow_dispatch:  # Configuring the workflow to allow manual triggering
 
 jobs:
   fetch_weather:
-    runs-on: ubuntu-latest  # Specify Ubuntu virtual machine for the action
+    runs-on: ubuntu-latest  # Specifying I want to use the Ubuntu Virtual Machine
 
     steps:
     - name: Checkout repository code
-      uses: actions/checkout@v3  # This clones your repository
+      uses: actions/checkout@v3  # Cloning the repository
 
     - name: Print test message
       run: echo "The workflow has run successfully!"
+
+    - name: Make weather.sh executable
+      run: chmod +x ./workflows/weather.sh
+
+    - name: Run weather.sh script
+      run: ./workflows/weather.sh
