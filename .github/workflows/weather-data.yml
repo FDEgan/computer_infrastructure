@@ -21,3 +21,16 @@ jobs:
 
     - name: Run weather.sh script
       run: .github/weather.sh
+
+        # Step 5: Configure Git for committing
+    - name: Set up Git config
+      run: |
+          git config --global user.name "Barry Egan"
+          git config --global user.email "g00425649@atu.ie"
+
+      # Step 6: Commit and push changes back to the repository
+    - name: Commit and push changes
+      run: |
+          git add .
+          git commit -m "Update weather data"
+          git push origin main
