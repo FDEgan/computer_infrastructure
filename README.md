@@ -14,6 +14,7 @@
   - [Task Seven - Write The Script](#task-seven)
   - [Task Eight - Notebook](#task-eight)
   - [Task Nine - Pandas](#task-nine)
+  - [Project Task One - Create a GitHub Actions Workflow](#task-p-one)
   - [Future Research ](#future-research)
   - [Contributors ](#contributors)
   - [License ](#license)
@@ -689,6 +690,65 @@ I have used MatPlotLib and other Python libraries in the past so had a good idea
 Additionally, I used the main documentation for each of the Numpy and MatPlotLib libraries when creating the plots. Please see below:   
 1. https://numpy.org/
 1. https://matplotlib.org/stable/plot_types/index
+
+<h2 align="center">Project - Task One - Create a GitHub Actions Workflow </h1><a name="task-p-one"></a>
+<p align="center">
+  <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/ac9b3566-f62f-4053-8679-95812e97bfb0" alt="Banking">
+</p>
+
+
+### Background<br>
+**Create a GitHub Actions Workflow:** In your repository, create a folder called .github/workflows/ (if it doesn't already exist). Inside this folder, create a file called weather-data.yml. This file will define the GitHub Actions workflow.
+
+### Files Created
+weather-data.yml
+
+### Inputs
+
+
+#### Task 1 - Navigating to the repository.
+![image](https://github.com/user-attachments/assets/963becb9-f0c7-4adc-b0e9-855858e4430a)
+
+
+
+
+#### Task 1 - Creating the Workflow.
+![image](https://github.com/user-attachments/assets/21e2e3c4-8cdd-42eb-94c5-30408352ec6c)
+
+
+
+#### Task 1 - Creating the weather-data.yml file.
+![image](https://github.com/user-attachments/assets/4f997cce-d74d-44f2-b833-cfe4b3faa885)
+
+
+
+### Outputs
+
+#### Task 7 - Workflow and YML file created.
+![image](https://github.com/user-attachments/assets/2955c247-01e6-41d8-8327-d87979cc7046)
+
+
+### Code<br>
+
+```
+mkdir -p .github/workflows # Creating the .github/workflows/ directory:
+```
+```
+touch .github/workflows/weather-data.yml # Creating the weather-data.yml file
+```
+
+### Code Explanation
+
+The MKDIR command was used to make the .github/workflows/ folder.
+
+The Touch command was used to create the file called weather-data.yml.
+
+### References
+
+1. https://www.geeksforgeeks.org/touch-command-in-linux-with-examples/
+2. https://www.geeksforgeeks.org/mkdir-command-in-linux-with-examples/
+
+
 
 <h2 align="center">Future Research</h1><a name="future"></a>
 If I was to revisit the project in the future, there are a number of areas I would wish to explore, including some areas addressed in the analysis, of which I would like to delve into deeper.
