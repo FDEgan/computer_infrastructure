@@ -1,0 +1,17 @@
+name: Fetch Weather Data
+
+on:
+  schedule:
+    - cron: '0 10 * * *'  # Run daily at 10 AM UTC
+  workflow_dispatch:  # Allow manual trigger of the workflow
+
+jobs:
+  fetch_weather:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Print test message
+      run: echo "The workflow has run successfully!"
