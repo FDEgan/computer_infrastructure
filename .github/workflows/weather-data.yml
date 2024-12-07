@@ -20,8 +20,8 @@ jobs:
 
     - name: Commit and push weather data
       run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
-        git add weather_data.json  # Add the weather data file (ensure the script generates this file)
-        git commit -m "Update weather data"
+        git config --global user.name "Barry Egan"
+        git config --global user.email "g00425649@atu.ie"
+        git add weather_data.json  # Adding the weather data file
+        git commit -m "Updated weather data"
         git push
