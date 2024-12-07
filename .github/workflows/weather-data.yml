@@ -25,3 +25,6 @@ jobs:
         git add weather_data.json  # Adding the weather data file
         git commit -m "Updated weather data"
         git push
+
+env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use the GitHub token to authenticate
