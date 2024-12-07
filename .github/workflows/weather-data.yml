@@ -17,7 +17,7 @@ jobs:
       run: echo "The workflow has run successfully!"
 
     - name: Make weather.sh executable
-      run: chmod +x ./workflows/weather.sh
+      run: chmod +x .github/weather.sh
 
     - name: Run weather.sh script
-      run: ./workflows/weather.sh
+      run: .github/weather.sh
