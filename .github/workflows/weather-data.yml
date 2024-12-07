@@ -1,4 +1,4 @@
-name: Retrieve Weather Data
+name: Fetch Weather Data
 
 on:
   schedule:
