@@ -11,24 +11,45 @@ jobs:
 
     steps:
     - name: Checkout repository code
-      uses: actions/checkout@v3
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}  # Explicitly pass GITHUB_TOKEN for authentication
+      uses: actions/checkout@v3  # Checkout the current repository where the workflow is located
+
+    - name: List files in the current directory
+      run: |
+        ls -al  # List files to confirm weather.sh is in the root of the repository
+
+    - name: Check permissions of weather.sh
+      run: |
+        ls -l weather.sh  # Check permissions to confirm if it's executable
+        chmod +x weather.sh  # Make sure it's executable
 
     - name: Run weather.sh script
       run: |
-        ./weather.sh         # Run the script
+        ./weather.sh  # Run the script
 
     - name: Check git status
       run: |
         git status  # Check if there are any changes in the repo
 
-    - name: Commit and push weather data
+    - name: List files in the directory
+      run: |
+        ls -al  # Check if the weather_data.json file is generated/updated
+
+    - name: Print weather data file
+      run: |
+        cat weather_data.json  # Output the contents of the weather data file to verify it's populated
+
+    - name: Add weather data to commit
+      run: |
+        git add weather_data.json  # Adding the weather data file
+
+    - name: Commit weather data
       run: |
         git config --global user.name "Barry Egan"
         git config --global user.email "g00425649@atu.ie"
-        git add weather_data.json  # Adding the weather data file
-        git commit -m "Updated weather data" || echo "No changes to commit"
+        git commit -m "Updated weather data" || echo "No changes to commit"  # Handle no changes gracefully
+
+    - name: Push weather data to repository
+      run: |
         git push
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Ensure authentication with GITHUB_TOKEN
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Adding authentication
