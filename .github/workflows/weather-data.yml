@@ -11,20 +11,25 @@ jobs:
 
     steps:
     - name: Checkout repository code
-      uses: actions/checkout@v3  # Cloning the repository
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}  # Explicitly stating I want to use GITHUB_TOKEN for authentication
 
     - name: Run weather.sh script
       run: |
-        
+        chmod +x weather.sh  # Ensure script is executable
         ./weather.sh         # Run the script
+
+    - name: Check git status
+      run: |
+        git status  # Check if there are any changes in the repo
 
     - name: Commit and push weather data
       run: |
         git config --global user.name "Barry Egan"
         git config --global user.email "g00425649@atu.ie"
         git add weather_data.json  # Adding the weather data file
-        git commit -m "Updated weather data"
+        git commit -m "Updated weather data" || echo "No changes to commit"
         git push
-
-env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use the GitHub token to authenticate
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Adding authentication
