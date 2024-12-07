@@ -28,21 +28,30 @@ jobs:
     - name: Run weather.sh script
       run: |
         ./weather.sh  # Run the weather script
+      continue-on-error: true  # Continue on error to capture more logs
 
-    - name: Check git status (Debugging)
+    - name: Check if weather.sh ran successfully
       run: |
-        git status  # Check if there are any changes after the script runs
+        echo "Exit code of weather.sh: $?"  # Check the exit code of the script
 
-    - name: List files after script runs
+    - name: Print weather.sh output (for debugging)
       run: |
-        ls -al  # List files to see if the .json file was created
+        cat weather.sh  # Print the contents of the script to ensure it's correct
 
-    - name: Commit and push weather data
+    - name: Check for created JSON file
       run: |
-        git config --global user.name "Barry Egan"
-        git config --global user.email "g00425649@atu.ie"
-        git add *.json  # Add any .json files created by the script
-        git commit -m "Updated weather data" || echo "No changes to commit"
-        git push
+        ls -al  # List files to check if the .json file was created
+
+    - name: Commit and push weather data (if the file exists)
+      run: |
+        if [ -f weather_data.json ]; then
+          git config --global user.name "Barry Egan"
+          git config --global user.email "g00425649@atu.ie"
+          git add weather_data.json
+          git commit -m "Updated weather data"
+          git push
+        else
+          echo "No weather data file found, skipping commit"
+        fi
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub token for authentication
