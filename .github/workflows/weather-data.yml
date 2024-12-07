@@ -17,8 +17,8 @@ jobs:
 
     - name: Run weather.sh script
       run: |
-        chmod +x weather.sh  # Ensure script is executable
-        .computer_infrastructure/weather.sh         # Run the script
+        
+        ./weather.sh         # Run the script
 
     - name: Check git status
       run: |
