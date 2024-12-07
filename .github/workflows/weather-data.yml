@@ -7,7 +7,10 @@ on:
 
 jobs:
   fetch_weather:
-    runs-on: ubuntu-latest  # Specifying I want to use the Ubuntu Virtual Machine
+    runs-on: ubuntu-latest  # Specifying Ubuntu Virtual Machine
+
+    permissions:
+      contents: write  # To Allow pushes to the repository.
 
     steps:
     - name: Checkout repository code
@@ -22,17 +25,15 @@ jobs:
     - name: Run weather.sh script
       run: .github/weather.sh
 
-        
     - name: Set up Git config
       run: |
           git config --global user.name "Barry Egan"
           git config --global user.email "g00425649@atu.ie"
 
-      
     - name: Commit and push changes
       run: |
           git add .
           git commit -m "Update weather data"
           git push origin main
-    env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub provides this token automatically for authentication
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
