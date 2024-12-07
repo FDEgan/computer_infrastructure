@@ -13,12 +13,11 @@ jobs:
     - name: Checkout repository code
       uses: actions/checkout@v3
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}  # Explicitly stating I want to use GITHUB_TOKEN for authentication
+        token: ${{ secrets.GITHUB_TOKEN }}  # Explicitly pass GITHUB_TOKEN for authentication
 
     - name: Run weather.sh script
       run: |
-        
-      ./weather.sh         # Run the script
+        ./weather.sh         # Run the script
 
     - name: Check git status
       run: |
@@ -32,4 +31,4 @@ jobs:
         git commit -m "Updated weather data" || echo "No changes to commit"
         git push
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Adding authentication
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Ensure authentication with GITHUB_TOKEN
