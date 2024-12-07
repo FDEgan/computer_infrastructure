@@ -2,56 +2,16 @@ name: Fetch Weather Data
 
 on:
   schedule:
-    - cron: '0 10 * * *'  # Running the file daily at 10am
-  workflow_dispatch:  # Enabling the manual triggering/running of the action
+    - cron: '0 10 * * *'  # Run daily at 10 AM UTC
+  workflow_dispatch:  # Allow manual trigger of the workflow
 
 jobs:
   fetch_weather:
-    runs-on: ubuntu-latest  # Use Ubuntu VM for the action
+    runs-on: ubuntu-latest  # Specify Ubuntu virtual machine for the action
 
     steps:
     - name: Checkout repository code
-      uses: actions/checkout@v3  # Checkout the repository code
+      uses: actions/checkout@v3  # This clones your repository
 
-    - name: List files in the directory (Debugging)
-      run: |
-        ls -al  # List files to ensure `weather.sh` is present
-
-    - name: Check if wget is installed (Debugging)
-      run: |
-        wget --version  # Ensure wget is installed in the runner
-
-    - name: Ensure the script is executable
-      run: |
-        chmod +x weather.sh  # Make sure weather.sh is executable
-
-    - name: Run weather.sh script
-      run: |
-        ./weather.sh  # Run the weather script
-      continue-on-error: true  # Continue on error to capture more logs
-
-    - name: Check if weather.sh ran successfully
-      run: |
-        echo "Exit code of weather.sh: $?"  # Check the exit code of the script
-
-    - name: Print weather.sh output (for debugging)
-      run: |
-        cat weather.sh  # Print the contents of the script to ensure it's correct
-
-    - name: Check for created JSON file
-      run: |
-        ls -al  # List files to check if the .json file was created
-
-    - name: Commit and push weather data (if the file exists)
-      run: |
-        if [ -f weather_data.json ]; then
-          git config --global user.name "Barry Egan"
-          git config --global user.email "g00425649@atu.ie"
-          git add weather_data.json
-          git commit -m "Updated weather data"
-          git push
-        else
-          echo "No weather data file found, skipping commit"
-        fi
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub token for authentication
+    - name: Print test message
+      run: echo "The workflow has run successfully!"
