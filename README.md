@@ -914,6 +914,54 @@ To run the script the "run:" command is used to excute the script. The .github/w
   **Commit and Push Changes Back to the Repository**:  Finally, configure the workflow to commit the new weather data and push those changes back to your repository.
 </p>
 
+*****
+
+#### Task 5 - Execute the weather.sh Script.
+![Pushing & Committing Changes](image-11.png)
+
+### Code<br>
+
+```
+    - name: Commit and push changes
+      run: |
+          git add .
+          git commit -m "Update weather data"
+          git push origin main
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
+
+```
+
+
+### Code Explanation
+
+The "steps:" denotes steps or events that are to be ran as part of the workflow.
+
+The "name:" denotes the name of the step being undertaken. In this case, the steps are called "Commit and push changes".
+
+The "run:" command designates to execute the shell command in the GitHub Workflow. The below breaks down the command for pushing & committing changes:
+
+  - "git add" is used to stage or schedule any modifications to, additions or deletions of files to be committed.
+    - the "." denotes that all changes in the current directory and its sub directories should be staged to be committed.
+  - "git commit" is used to add a commit the changes. 
+    - "-m "Update weather data" denotes the message to be used for the commit.
+  - "git push" is used to push the commit to the intended repository. In this case the repository is "origin main". This means it should be pushed to the main branch of the remote repository.  On GitHub the default names for the remote repository is "Origin".
+
+The "env" keyword defines an of the environment variables available in the bash script. The following gives a breakdown of its uses:
+
+- "GITHUB_TOKEN" is used to allow Git operations like committing, pushing and interating with the Github API.
+
+Additionally, it was required to use git config to ensure that git know who is making the commits. 
+
+- The "git config --global user.name "Barry Egan" will specify that the commits were performed by myself.
+- The git config --global user.email "g00425649@atu.ie" will ensure that the commits are associated with my student account.
+
+
+### References
+
+1. https://dev.to/github/the-githubtoken-in-github-actions-how-it-works-change-permissions-customizations-3cgp
+2. https://www.geeksforgeeks.org/how-to-push-a-project-and-contribute-on-github/
+
 <h3 align="center">Project - Task Seven - Test the Workflow</h1><a name="task-p-seven"></a>
 <p align="center">
 </p>
