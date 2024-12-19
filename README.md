@@ -14,8 +14,14 @@
   - [Task Seven - Write The Script](#task-seven)
   - [Task Eight - Notebook](#task-eight)
   - [Task Nine - Pandas](#task-nine)
-  - [Project Task One - Create a GitHub Actions Workflow](#task-p-one)
-  - [Future Research ](#future-research)
+  - [Project - GitHub Actions Workflow ](#task-p)
+    - [Project - Task One - Create a GitHub Actions Workflow ](#task-p-one)  
+    - [Project - Task Two - Run Daily at 10am ](#task-p-one)  
+    - [Project - Task Three - Use a Linux Virtual Machine ](#task-p-one)  
+    - [Project - Task Four - Clone the Repository ](#task-p-one)
+    - [Project - Task Five - Execute the weather.sh ](#task-p-one)
+    - [Project - Task Six - Commit and Push Changes Back to the Repository ](#task-p-one)
+    - [Project - Task Seven - Test the Workflow ](#task-p-one)
   - [Contributors ](#contributors)
   - [License ](#license)
 
@@ -606,38 +612,7 @@ The #!/bin/bash is used at the top of the script to indicate the interpreter tha
 ### Background<br>
 Write a program called plottask.py that displays a histogram of a normal distribution of a 1000 values with a mean of 5 and standard deviation of 2, and a plot of the function  h(x)=x^3 in the range 0 to 10, on the one set of axes.. 
 
-### Program Name <br>
-plottask.py
 
-### Program Outline<br>
-The program should:
-1. Display a histogram of a normal distribution of a 1000 values with a mean of 5 and standard deviation of 2.
-2. Plot of the function  h(x)=x^3 in the range 0 to 10.
-3. On one set of axes.
-
-### Code<br>
-```
-# Importing Libraries Required for the task
-import numpy as np
-import matplotlib.pyplot as plt 
-plot_data = np.random.normal(5, 2, 1000) # First Argument is Mean = 5/ Second Argument is Std Dev = 2 and Third Argument is the Size of the Array
-#Creating Values for 2nd Plot X Axis.
-x = np.arange(0, 10.1, 0.1)  #1st Argument = Start of the Values/ 2nd = End of the Values/ 3rd Step Size of the values
-y = x ** 3 # Creating the Y Values based on the function provided.
-plt.figure(figsize=(20, 10)) # Dictating the Width & Height in Inches
-plt.hist(plot_data, bins=15, color='green', label= 'Histogram Plot') # Creating the Histrogram/ 1st Arg = Data to Plot/ 2nd Arg Number of Bins in Graph/ 3rd Color Of Hist & Naming the plot 
-plt.plot(x, y, color='yellow', label='Function Plot') #Plotting the 2nd Function, setting color & Naming the Plot)
-plt.title('Histogram of Normal Distribution for Week 8 Task') #Setting Title of the Figure
-plt.xlabel('Value') #Setting Label of X Axis
-plt.ylabel('No. of Occurrences Of Values') #Setting Label of Y Axis
-plt.legend() # Showing the legend
-plt.show() # Showing the plot
-```
-### Sample Input<br>
-**N/A** <br>
-
-### Output<br>
-![image](https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/d5bd9a07-9f38-41ba-bcc9-ecba4490a35b)
 
 <h2 align="center">Task Nine - Pandas </h1><a name="task-nine"></a>
 <p align="center">
@@ -648,69 +623,60 @@ plt.show() # Showing the plot
 ### Background<br>
 Write a program called plottask.py that displays a histogram of a normal distribution of a 1000 values with a mean of 5 and standard deviation of 2, and a plot of the function  h(x)=x^3 in the range 0 to 10, on the one set of axes.. 
 
-### Program Name <br>
-plottask.py
 
-### Program Outline<br>
-The program should:
-1. Display a histogram of a normal distribution of a 1000 values with a mean of 5 and standard deviation of 2.
-2. Plot of the function  h(x)=x^3 in the range 0 to 10.
-3. On one set of axes.
-
-### Code<br>
-```
-# Importing Libraries Required for the task
-import numpy as np
-import matplotlib.pyplot as plt 
-plot_data = np.random.normal(5, 2, 1000) # First Argument is Mean = 5/ Second Argument is Std Dev = 2 and Third Argument is the Size of the Array
-#Creating Values for 2nd Plot X Axis.
-x = np.arange(0, 10.1, 0.1)  #1st Argument = Start of the Values/ 2nd = End of the Values/ 3rd Step Size of the values
-y = x ** 3 # Creating the Y Values based on the function provided.
-plt.figure(figsize=(20, 10)) # Dictating the Width & Height in Inches
-plt.hist(plot_data, bins=15, color='green', label= 'Histogram Plot') # Creating the Histrogram/ 1st Arg = Data to Plot/ 2nd Arg Number of Bins in Graph/ 3rd Color Of Hist & Naming the plot 
-plt.plot(x, y, color='yellow', label='Function Plot') #Plotting the 2nd Function, setting color & Naming the Plot)
-plt.title('Histogram of Normal Distribution for Week 8 Task') #Setting Title of the Figure
-plt.xlabel('Value') #Setting Label of X Axis
-plt.ylabel('No. of Occurrences Of Values') #Setting Label of Y Axis
-plt.legend() # Showing the legend
-plt.show() # Showing the plot
-```
-### Sample Input<br>
-**N/A** <br>
-
-### Output<br>
-![image](https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/d5bd9a07-9f38-41ba-bcc9-ecba4490a35b)
-
-
-**References**
-
-I have used MatPlotLib and other Python libraries in the past so had a good idea of what needed to be done. I needed to refresh my mind on Numpy Arrays, so used the below:
-1. https://numpy.org/doc/stable/reference/generated/numpy.arange.html
-
-Additionally, I used the main documentation for each of the Numpy and MatPlotLib libraries when creating the plots. Please see below:   
-1. https://numpy.org/
-1. https://matplotlib.org/stable/plot_types/index
-
-<h2 align="center">Project - Task One - Create a GitHub Actions Workflow </h1><a name="task-p-one"></a>
+<h2 align="center">Project - GitHub Actions Workflow </h1><a name="task-p"></a>
 <p align="center">
   <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/ac9b3566-f62f-4053-8679-95812e97bfb0" alt="Banking">
 </p>
 
 
-### Background<br>
-**Create a GitHub Actions Workflow:** In your repository, create a folder called .github/workflows/ (if it doesn't already exist). Inside this folder, create a file called weather-data.yml. This file will define the GitHub Actions workflow.
+<h3 align="center">Project - Task One - Create a GitHub Actions Workflow </h1><a name="task-p-one"></a>
+<p align="center">
+</p>
 
-### Files Created
-weather-data.yml
+**Create a GitHub Actions Workflow**: In your repository, create a folder called .github/workflows/ (if it doesn't already exist). Inside this folder, create a file called weather-data.yml. This file will define the GitHub Actions workflow.
 
-### Inputs
-
-
-#### Task 1 - Navigating to the repository.
-![image](https://github.com/user-attachments/assets/963becb9-f0c7-4adc-b0e9-855858e4430a)
+<h3 align="center">Project - Task Two - Run Daily at 10am</h1><a name="task-p-two"></a>
+<p align="center">
+</p>
 
 
+**Run Daily at 10am**: Use the schedule event with cron to set the script to run once a day at 10am. Include also the workflow_dispatch event so you can test the workflow.
 
+<h3 align="center">Project - Task Three - Use a Linux Virtual Machine</h1><a name="task-p-three"></a>
+<p align="center">
+</p>
+
+
+**Use a Linux Virtual Machine**:  In the workflow file, specify that a Ubuntu virtual machine should be used to run the action.
+
+<h3 align="center">Project - Task Four - Clone the Repository</h1><a name="task-p-four"></a>
+<p align="center">
+</p>
+
+
+**Clone the Repository**:  Have the workflow clone your repository.
+
+<h3 align="center">Project - Task Five - Execute the weather.sh Script</h1><a name="task-p-five"></a>
+<p align="center">
+</p>
+
+
+**Execute the weather.sh Script**:  Add a step that runs your weather.sh script.
+
+<h3 align="center">Project - Task Six - Commit and Push Changes Back to the Repository</h1><a name="task-p-six"></a>
+<p align="center">
+</p>
+
+
+**Commit and Push Changes Back to the Repository**:  Finally, configure the workflow to commit the new weather data and push those changes back to your repository.
+
+<h3 align="center">Project - Task Seven - Test the Workflow</h1><a name="task-p-seven"></a>
+<p align="center">
+</p>
+
+
+**Test the Workflow**:  Commit and push the workflow to your repository. Check the logs in GitHub to ensure that the weather.sh script runs correctly, that new data is being committed.
 
 #### Task 1 - Creating the Workflow.
 ![image](https://github.com/user-attachments/assets/21e2e3c4-8cdd-42eb-94c5-30408352ec6c)
@@ -748,17 +714,6 @@ The Touch command was used to create the file called weather-data.yml.
 1. https://www.geeksforgeeks.org/touch-command-in-linux-with-examples/
 2. https://www.geeksforgeeks.org/mkdir-command-in-linux-with-examples/
 
-
-
-<h2 align="center">Future Research</h1><a name="future"></a>
-If I was to revisit the project in the future, there are a number of areas I would wish to explore, including some areas addressed in the analysis, of which I would like to delve into deeper.
-
-1. The main area I would like to delve into, is the use of machine learning models for predicting the type of flowers.
-2. I would like to refine some of the graphs a bit more to be visually more pleasing.
-3. I would like to revisit how the outputs appear when opened up outside of Python. While some of the graphs looked good when viewed in VSCode, when opened externally, they didn't export as I hoped.
-4. I would like to delve further into the correlation per species of flower to see if there are any species of flowers that are more correlated than others.
-5. My professional background is as a Business Intelligence Developer, so I always want to have interactive and informative graphs. However, while the graphs I designed were informative, they are not very interactive. I have used Plotly sparingly but would like to use it for future projects as it is very interactive for end users.
-6. I would use different methods for calculating the correlation, to see does it differ across ethe Kendalls and Spearmans coefficients.
 
 
 <h2 align="center">Contributors</h1><a name="contributors"></a>
