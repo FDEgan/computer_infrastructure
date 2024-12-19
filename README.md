@@ -623,11 +623,13 @@ Write a program called plottask.py that displays a histogram of a normal distrib
 ### Background<br>
 Write a program called plottask.py that displays a histogram of a normal distribution of a 1000 values with a mean of 5 and standard deviation of 2, and a plot of the function  h(x)=x^3 in the range 0 to 10, on the one set of axes.. 
 
-
+****
 <h2 align="center">Project - GitHub Actions Workflow </h1><a name="task-p"></a>
 <p align="center">
   <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/ac9b3566-f62f-4053-8679-95812e97bfb0" alt="Banking">
 </p>
+
+****
 
 ####  Workflow Code.
 
@@ -672,6 +674,7 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
 ```
+****
 
 <h3 align="center">Project - Task One - Create a GitHub Actions Workflow </h1><a name="task-p-one"></a>
 <p align="center">
@@ -719,6 +722,7 @@ The Touch command was used to create the file called weather-data.yml.
 1. https://www.geeksforgeeks.org/touch-command-in-linux-with-examples/
 2. https://www.geeksforgeeks.org/mkdir-command-in-linux-with-examples/
 
+****
 
 <h3 align="center">Project - Task Two - Run Daily at 10am</h1><a name="task-p-two"></a>
 <p align="center">
@@ -781,6 +785,8 @@ The "workflow_dispatch" command then allows for the manual triggering of the wor
 1. https://www.geeksforgeeks.org/crontab-in-linux-with-examples/
 2. https://www.geeksforgeeks.org/how-to-automate-tasks-with-cron-jobs-in-linux/
 
+*****
+
 <h3 align="center">Project - Task Three - Use a Linux Virtual Machine</h1><a name="task-p-three"></a>
 <p align="center">
 </p>
@@ -818,6 +824,7 @@ The "runs-on: ubuntu-latest:" designates the virtual machine or environment in w
 2. https://www.geeksforgeeks.org/how-to-automate-tasks-with-cron-jobs-in-linux/
 3. https://www.geeksforgeeks.org/github-workflows/
 
+*****
 
 <h3 align="center">Project - Task Four - Clone the Repository</h1><a name="task-p-four"></a>
 <p align="center">
@@ -858,6 +865,8 @@ The "actions/checkout@v3:" action queries the repositories code, in order to all
 2. https://www.geeksforgeeks.org/how-to-automate-tasks-with-cron-jobs-in-linux/
 3. https://www.geeksforgeeks.org/github-workflows/
 4. https://graphite.dev/guides/github-actions-checkout
+
+*****
 
 <h3 align="center">Project - Task Five - Execute the weather.sh Script</h1><a name="task-p-five"></a>
 <p align="center">
@@ -904,6 +913,9 @@ To run the script the "run:" command is used to excute the script. The .github/w
 
 1. https://www.linode.com/docs/guides/modify-file-permissions-with-chmod/
 2. https://www.geeksforgeeks.org/run-bash-script-in-github-actions/
+
+
+*****
 
 <h3 align="center">Project - Task Six - Commit and Push Changes Back to the Repository</h1><a name="task-p-six"></a>
 <p align="center">
@@ -962,6 +974,8 @@ Additionally, it was required to use git config to ensure that git know who is m
 1. https://dev.to/github/the-githubtoken-in-github-actions-how-it-works-change-permissions-customizations-3cgp
 2. https://www.geeksforgeeks.org/how-to-push-a-project-and-contribute-on-github/
 
+*****
+
 <h3 align="center">Project - Task Seven - Test the Workflow</h1><a name="task-p-seven"></a>
 <p align="center">
 </p>
@@ -970,8 +984,38 @@ Additionally, it was required to use git config to ensure that git know who is m
 **Test the Workflow**:  Commit and push the workflow to your repository. Check the logs in GitHub to ensure that the weather.sh script runs correctly, that new data is being committed.
 </p>
 
+*****
+
+#### Task 7 - Workflow Action Successfully ran
+![Workflow Action Successfully ran](image-12.png)
+
+#### Task 7 - Set Up Job
+![Set Up Job](image-13.png)
+
+#### Task 7 - Checkout Repository Code
+![Checkout Repository Code](image-14.png)
+
+#### Task 7 - Print Test Message
+![Print Test Message](image-15.png)
 
 
+#### Task 7 - Make Weather.sh Executable
+![Make Weather.sh Executable](image-16.png)
+
+#### Task 7 - Set Up Gif Config
+![Set Up Gif Config](image-18.png)
+
+#### Task 7 - Commit & Push Changes
+![Commit & Push Changes](image-19.png)
+
+#### Task 7 - Post Checkout Repository Code
+![Post Checkout Repository Code](image-20.png)
+
+#### Task 7 - Complete Job
+![Complete Job](image-21.png)
+
+#### Task 7 - Outputs from Workflow
+![Outputs from Workflow](image.png)
 
 
 <h2 align="center">Contributors</h1><a name="contributors"></a>
