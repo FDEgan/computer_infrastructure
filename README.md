@@ -637,6 +637,45 @@ Write a program called plottask.py that displays a histogram of a normal distrib
 **Create a GitHub Actions Workflow**: In your repository, create a folder called .github/workflows/ (if it doesn't already exist). Inside this folder, create a file called weather-data.yml. This file will define the GitHub Actions workflow.
 </p>
 
+*****
+
+#### Task 1 - Creating the Workflow.
+![image](https://github.com/user-attachments/assets/21e2e3c4-8cdd-42eb-94c5-30408352ec6c)
+
+
+
+#### Task 1 - Creating the weather-data.yml file.
+![image](https://github.com/user-attachments/assets/4f997cce-d74d-44f2-b833-cfe4b3faa885)
+
+
+
+### Outputs
+
+#### Task 7 - Workflow and YML file created.
+![image](https://github.com/user-attachments/assets/2955c247-01e6-41d8-8327-d87979cc7046)
+
+
+### Code<br>
+
+```
+mkdir -p .github/workflows # Creating the .github/workflows/ directory:
+```
+```
+touch .github/workflows/weather-data.yml # Creating the weather-data.yml file
+```
+
+### Code Explanation
+
+The MKDIR command was used to make the .github/workflows/ folder.
+
+The Touch command was used to create the file called weather-data.yml.
+
+### References
+
+1. https://www.geeksforgeeks.org/touch-command-in-linux-with-examples/
+2. https://www.geeksforgeeks.org/mkdir-command-in-linux-with-examples/
+
+
 <h3 align="center">Project - Task Two - Run Daily at 10am</h1><a name="task-p-two"></a>
 <p align="center">
 </p>
@@ -686,41 +725,7 @@ Write a program called plottask.py that displays a histogram of a normal distrib
 **Test the Workflow**:  Commit and push the workflow to your repository. Check the logs in GitHub to ensure that the weather.sh script runs correctly, that new data is being committed.
 </p>
 
-#### Task 1 - Creating the Workflow.
-![image](https://github.com/user-attachments/assets/21e2e3c4-8cdd-42eb-94c5-30408352ec6c)
 
-
-
-#### Task 1 - Creating the weather-data.yml file.
-![image](https://github.com/user-attachments/assets/4f997cce-d74d-44f2-b833-cfe4b3faa885)
-
-
-
-### Outputs
-
-#### Task 7 - Workflow and YML file created.
-![image](https://github.com/user-attachments/assets/2955c247-01e6-41d8-8327-d87979cc7046)
-
-
-### Code<br>
-
-```
-mkdir -p .github/workflows # Creating the .github/workflows/ directory:
-```
-```
-touch .github/workflows/weather-data.yml # Creating the weather-data.yml file
-```
-
-### Code Explanation
-
-The MKDIR command was used to make the .github/workflows/ folder.
-
-The Touch command was used to create the file called weather-data.yml.
-
-### References
-
-1. https://www.geeksforgeeks.org/touch-command-in-linux-with-examples/
-2. https://www.geeksforgeeks.org/mkdir-command-in-linux-with-examples/
 
 
 
