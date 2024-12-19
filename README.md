@@ -791,7 +791,7 @@ The "workflow_dispatch" command then allows for the manual triggering of the wor
 
 *****
 
-#### Task 3 - Cloning the repository .
+#### Task 3 - Use a Linux Virtual Machine .
 ![Ubuntu Machine](image-7.png)
 
 
@@ -829,7 +829,7 @@ The "runs-on: ubuntu-latest:" designates the virtual machine or environment in w
 
 *****
 
-#### Task 3 - Cloning the Repository.
+#### Task 4 - Cloning the Repository.
 ![Cloning Repository](image-8.png)
 
 
@@ -866,6 +866,44 @@ The "actions/checkout@v3:" action queries the repositories code, in order to all
 <p align="center">
 **Execute the weather.sh Script**:  Add a step that runs your weather.sh script.
 </p>
+
+*****
+
+#### Task 5 - Execute the weather.sh Script.
+![Executing Script](image-9.png)
+
+
+### Code<br>
+
+```
+    - name: Make weather.sh executable
+      run: chmod +x .github/weather.sh
+
+```
+```
+    - name: Run weather.sh script
+      run: .github/weather.sh
+```
+
+### Code Explanation
+
+The "steps:" denotes steps or events that are to be ran as part of the workflow.
+
+The "name:" denotes the name of the step being undertaken. In this case, the steps are called " Make weather.sh executable" and "Run weather.sh script".
+
+The "run:" command designates to execute the shell command in the GitHub Workflow. The below breaks down the command for making the file executable :
+
+  - "cmod" is used to modify the file permissions. It stands for change mode.
+  - "+x" is used to add execute permissions to the file. This will in turn allow it to be ran in the workflow.
+  - ".github/weather.sh" is the file path for the shell script that is to be made executable.
+
+To run the script the "run:" command is used to excute the script. The .github/weather.sh designates where the shell script is saved.
+
+
+### References
+
+1. https://www.linode.com/docs/guides/modify-file-permissions-with-chmod/
+2. https://www.geeksforgeeks.org/run-bash-script-in-github-actions/
 
 <h3 align="center">Project - Task Six - Commit and Push Changes Back to the Repository</h1><a name="task-p-six"></a>
 <p align="center">
