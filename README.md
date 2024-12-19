@@ -633,50 +633,58 @@ Write a program called plottask.py that displays a histogram of a normal distrib
 <h3 align="center">Project - Task One - Create a GitHub Actions Workflow </h1><a name="task-p-one"></a>
 <p align="center">
 </p>
-
+<p align="center">
 **Create a GitHub Actions Workflow**: In your repository, create a folder called .github/workflows/ (if it doesn't already exist). Inside this folder, create a file called weather-data.yml. This file will define the GitHub Actions workflow.
+</p>
 
 <h3 align="center">Project - Task Two - Run Daily at 10am</h1><a name="task-p-two"></a>
 <p align="center">
 </p>
 
-
+<p align="center">
 **Run Daily at 10am**: Use the schedule event with cron to set the script to run once a day at 10am. Include also the workflow_dispatch event so you can test the workflow.
+</p>
 
 <h3 align="center">Project - Task Three - Use a Linux Virtual Machine</h1><a name="task-p-three"></a>
 <p align="center">
 </p>
 
-
+<p align="center">
 **Use a Linux Virtual Machine**:  In the workflow file, specify that a Ubuntu virtual machine should be used to run the action.
+</p>
 
 <h3 align="center">Project - Task Four - Clone the Repository</h1><a name="task-p-four"></a>
 <p align="center">
 </p>
 
-
+<p align="center">
 **Clone the Repository**:  Have the workflow clone your repository.
+</p>
 
 <h3 align="center">Project - Task Five - Execute the weather.sh Script</h1><a name="task-p-five"></a>
 <p align="center">
 </p>
 
-
+<p align="center">
 **Execute the weather.sh Script**:  Add a step that runs your weather.sh script.
+</p>
 
 <h3 align="center">Project - Task Six - Commit and Push Changes Back to the Repository</h1><a name="task-p-six"></a>
 <p align="center">
 </p>
 
 
-**Commit and Push Changes Back to the Repository**:  Finally, configure the workflow to commit the new weather data and push those changes back to your repository.
+<p align="center">
+  **Commit and Push Changes Back to the Repository**:  Finally, configure the workflow to commit the new weather data and push those changes back to your repository.
+</p>
 
 <h3 align="center">Project - Task Seven - Test the Workflow</h1><a name="task-p-seven"></a>
 <p align="center">
 </p>
 
-
+<p align="center">
 **Test the Workflow**:  Commit and push the workflow to your repository. Check the logs in GitHub to ensure that the weather.sh script runs correctly, that new data is being committed.
+</p>
 
 #### Task 1 - Creating the Workflow.
 ![image](https://github.com/user-attachments/assets/21e2e3c4-8cdd-42eb-94c5-30408352ec6c)
