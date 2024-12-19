@@ -629,6 +629,49 @@ Write a program called plottask.py that displays a histogram of a normal distrib
   <img src="https://github.com/FDEgan/pands-weekly-tasks/assets/157654218/ac9b3566-f62f-4053-8679-95812e97bfb0" alt="Banking">
 </p>
 
+####  Workflow Code.
+
+```
+name: Fetch Weather Data
+
+on:
+  schedule:
+    - cron: '0 10 * * *'  # Indicating to run the file daily at 10am
+  workflow_dispatch:  # Configuring the workflow to allow manual triggering
+
+jobs:
+  fetch_weather:
+    runs-on: ubuntu-latest  # Specifying Ubuntu Virtual Machine
+
+    permissions:
+      contents: write  # To Allow pushes to the repository.
+
+    steps:
+    - name: Checkout repository code
+      uses: actions/checkout@v3  # Cloning the repository
+
+    - name: Print test message
+      run: echo "The workflow has run successfully!"
+
+    - name: Make weather.sh executable
+      run: chmod +x .github/weather.sh
+
+    - name: Run weather.sh script
+      run: .github/weather.sh
+
+    - name: Set up Git config
+      run: |
+          git config --global user.name "Barry Egan"
+          git config --global user.email "g00425649@atu.ie"
+
+    - name: Commit and push changes
+      run: |
+          git add .
+          git commit -m "Update weather data"
+          git push origin main
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
+```
 
 <h3 align="center">Project - Task One - Create a GitHub Actions Workflow </h1><a name="task-p-one"></a>
 <p align="center">
@@ -638,6 +681,7 @@ Write a program called plottask.py that displays a histogram of a normal distrib
 </p>
 
 *****
+### Inputs
 
 #### Task 1 - Creating the Workflow.
 ![image](https://github.com/user-attachments/assets/21e2e3c4-8cdd-42eb-94c5-30408352ec6c)
@@ -651,7 +695,7 @@ Write a program called plottask.py that displays a histogram of a normal distrib
 
 ### Outputs
 
-#### Task 7 - Workflow and YML file created.
+#### Task 1 - Workflow and YML file created.
 ![image](https://github.com/user-attachments/assets/2955c247-01e6-41d8-8327-d87979cc7046)
 
 
@@ -684,6 +728,59 @@ The Touch command was used to create the file called weather-data.yml.
 **Run Daily at 10am**: Use the schedule event with cron to set the script to run once a day at 10am. Include also the workflow_dispatch event so you can test the workflow.
 </p>
 
+
+*****
+
+#### Task 2 - Using Cron to schedule Workflow.
+![Cron Schedule](image-1.png)
+
+
+#### Task 2 - Configuring Manual Triggering.
+![Manual Triggering](image-2.png)
+
+#### Task 2 - Testing Manual Triggering.
+![Tesing Workflow](image-3.png)
+
+### Outputs
+
+#### Task 2 - Workflow Mid Process.
+![Workflow Mid Process](image-4.png)
+
+#### Task 2 - Workflow Completed.
+![Workflow Completed](image-5.png)
+
+#### Task 2 - Outputted File.
+![Outputted Weather File](image-6.png)
+
+### Code<br>
+
+```
+on:
+  schedule:
+    - cron: '0 10 * * *'  # Indicating to run the file daily at 10am
+  workflow_dispatch:  # Configuring the workflow to allow manual triggering
+```
+
+### Code Explanation
+
+The "on:" command denotes the events that have to occur for the workflow to be triggered.
+
+The "schedule:" command denotes the schedule that the workflow should be ran automatically.
+
+The "cron:" command is a time based job scheduler that allows for scripts/commands or tasks to be ran automatically at specific times or periods. 
+The "0 10 * * *" is broken down as follows:
+
+- **"0"** - Denotes the minutes past the hour at which the workflow should be ran. In this case it is on the hour.
+- **"10"** - Denotes the hour at which the workflow should be ran. In this case it is the 10th hour or 10am.
+- **"***10***"** - Denotes the schedule for the workflow to be ran. In this case its set to run every day, every month and every weekday.
+
+The "workflow_dispatch" command then allows for the manual triggering of the workflow.
+
+### References
+
+1. https://www.geeksforgeeks.org/crontab-in-linux-with-examples/
+2. https://www.geeksforgeeks.org/how-to-automate-tasks-with-cron-jobs-in-linux/
+
 <h3 align="center">Project - Task Three - Use a Linux Virtual Machine</h1><a name="task-p-three"></a>
 <p align="center">
 </p>
@@ -692,6 +789,36 @@ The Touch command was used to create the file called weather-data.yml.
 **Use a Linux Virtual Machine**:  In the workflow file, specify that a Ubuntu virtual machine should be used to run the action.
 </p>
 
+*****
+
+#### Task 3 - Cloning the repository .
+![Ubuntu Machine](image-7.png)
+
+
+### Code<br>
+
+```
+jobs:
+  fetch_weather:
+    runs-on: ubuntu-latest  # Specifying Ubuntu Virtual Machine
+```
+
+### Code Explanation
+
+The "jobs:" command denotes steps or events that are to be ran as part of the workflow.
+
+The "fetch_weather:" denotes the name of the job. In this case it is called "fetch_weather".
+
+The "runs-on: ubuntu-latest:" designates the virtual machine or environment in which the job should be ran. In this case it is on latest stable version of Ubuntu Linux.
+
+
+### References
+
+1. https://www.geeksforgeeks.org/crontab-in-linux-with-examples/
+2. https://www.geeksforgeeks.org/how-to-automate-tasks-with-cron-jobs-in-linux/
+3. https://www.geeksforgeeks.org/github-workflows/
+
+
 <h3 align="center">Project - Task Four - Clone the Repository</h1><a name="task-p-four"></a>
 <p align="center">
 </p>
@@ -699,6 +826,38 @@ The Touch command was used to create the file called weather-data.yml.
 <p align="center">
 **Clone the Repository**:  Have the workflow clone your repository.
 </p>
+
+*****
+
+#### Task 3 - Cloning the Repository.
+![Cloning Repository](image-8.png)
+
+
+### Code<br>
+
+```
+    steps:
+    - name: Clone repository code
+      uses: actions/checkout@v3  # Cloning the repository
+```
+
+### Code Explanation
+
+The "steps:" denotes steps or events that are to be ran as part of the workflow.
+
+The "name:" denotes the name of the stwp being undertaken. In this case it is called "fetch_weather".
+
+The "uses:" command designates the GitHub Action that should be used for the step. In this case we are using the version 3 of the checkout action.
+
+The "actions/checkout@v3:" action queries the repositories code, in order to allow follwojg steps to be able to access the files in the repository.
+
+
+### References
+
+1. https://www.geeksforgeeks.org/crontab-in-linux-with-examples/
+2. https://www.geeksforgeeks.org/how-to-automate-tasks-with-cron-jobs-in-linux/
+3. https://www.geeksforgeeks.org/github-workflows/
+4. https://graphite.dev/guides/github-actions-checkout
 
 <h3 align="center">Project - Task Five - Execute the weather.sh Script</h1><a name="task-p-five"></a>
 <p align="center">
