@@ -25,6 +25,11 @@ jobs:
     - name: Run weather.sh script
       run: .github/weather.sh
 
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y wget coreutils git
+
     - name: Set up Git config
       run: |
           git config --global user.name "Barry Egan"

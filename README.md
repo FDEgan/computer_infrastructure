@@ -27,45 +27,67 @@
 
 
 <h2 align="center">Overview</h1><a name="overview"></a>
-Every week a new task will be put into the weekly tasks on the VLE. Your solutions will be assessed towards the end of the semester and will be worth 50% of your marks for this module. The marking scheme is given below. It is expected that you will be working on the exercises throughout the semester. It is not expected that you get every program right first time. So long as an attempt is made the week the problem is posted, this will count as a good approach. It is important that you keep working on any incomplete problems until the deadline. Please note that all students are bound by the Quality Framework [3] at GMIT which includes the Code of Student Conduct and the Policy on Plagiarism. The onus is on the student to ensure they do not, even inadvertently, break the rules. A clean and comprehensive git [1] history (see below) is the best way to demonstrate that your submission is your own work. It is, however, expected that you draw on works that are not your own and you should systematically reference those works to enhance your submission. 
+The purpose of the assessment is for you to demonstrate ability in the following:
+
+- Use, configure, and script in a command line interface environment.
+- Manipulate and move data and code using the command line.
+- Compare commonly available software infrastructures and architectures.
+- Select appropriate infrastructure for a given computational task.
+
+The assessment consists of three overlapping parts: a GitHub repository containing all your work (20%), a series of tasks (40%), and a small project (40%).
 
 <h2 align="center">Repository Structure</h1><a name="structure"></a>
 
-- `Analysis.ipynb`: Jupyter notebook containing all the analysis on the Palmer Penguin dataset.
-- `analysis.py`: Python File that can be run to return all analytical outputs.
-- `Correlation`: Output folder containing PNG image files from correlation analysis.
-- `Distribution`: Output folder containing PNG image files from distribution analysis.
-- `Exploratory`: Output folder containing PNG image files from EDA.
-- `Summary`: Output folder containing PNG image files providing a background and description of the dataset.
-- `Text Files`: Output folder containing text files from the analysis, showing summary, correlation and distribution statistics from the analysis.
-- `README.md`: Overview of the project and repository.
+- `.github`: A folder containing the GitHub Actions workflow for the Project .
+- `data`: A folder containing the timestamps and weather sub folders for the tasks.
+- `images`: A folder containing the screenshots used in creating the ReadMe and weather.ipynb notebook.
+- `weather_files`: A folder containing the json files that have been created by the GitHub Actions Workflow.
 - `.gitignore`: File to specify untracked files to ignore in the repository.
+- `20241125_223027.json`: Output json file from the tasks.
+- `LICENSE`: File containing the MIT License details used for the project.
+- `README.md`: Overview of the project and repository.
+- `Task_9.ipynb`: Python notebook with analysis of one of the json files outputted from the script.
+- `weather.ipynb`: Python notebook with description of steps taken to complete tasks 1 - 7.
+- `weather.sh`: The shell script being used to download the weather data from the Met Eireann API.
 
 
-<h2 align="center">Running The Python File</h1><a name="runcode"></a>
 
-1. To install the correct libraries, run the below code in your terminal
-   ```
-      pip install pandas tabulate matplotlib seaborn scipy numpy
-   ```
-2. To run the code, navigate to where the analysis.py file has been downloaded to and copy the file path
-3. Open up your terminal, cmd or other option and input the below code. Replace the below code with the file path and include double quotations at the start and end of the file path.
-   ```
-   cd "C:\Users\Barry\Programming & Scripting\Iris Project"
-   ```
-4. Run the below code in terminal, cmd or other option and run the below code:
-   ```
-    python analysis.py
-   ```
-The below files should be saved to the file path you entered:
+<h2 align="center">Running The Script</h1><a name="runcode"></a>
 
-   | Folder         | File Name                                   |
-|-------------------|-----------------------------------------------|
-| Correlation        | Scatter.png                                                                                                          |
-| Distribution       | BoxPlot.png, Histogram.png                                                                                           |
-| Exploratory        | Bar Chart Calculated Variables.png, Bar Chart.png, CountPlot.png, Violin Plot.png                                    |
-| Summary            | background.png, description.png, variables.png                                                                       |
-| Text Files         | correlation_summary_statistics.txt, distribution_summary_statistics.txt, species_summary_statistics.txt, summary_statistics.txt  |
+### Dependencies for Tasks
+
+The following dependencies are required for running the code related to Tasks 1 to 7 and the Project:
+
+- mkdir - Installed by default on most Linux Based Systems.
+- date - Installed by default on most Linux Based Systems.
+- echo - Installed by default on most Linux Based Systems.
+- wget - May require Installation
+- git - Installed by default on most Linux Based Systems.
+- chmod - Installed by default on most Linux Based Systems.
+
+If the files need to be installed the below code should be ran:
+
+**WGET**
+```
+sudo apt update
+sudo apt install wget
+```
+
+**git**
+
+```
+sudo apt-get install git
+```
+
+**mkdir, date & echo, chmod**
+These commands are part of the coreutils package, so the below code should be ran to make sure they are installed:
+
+```
+sudo apt install coreutils
+```
+
+It should be noted that the GitHub Actions Workflow installs the dependencies as part of its steps.
+
      
 <h2 align="center">Task One - Create Directory Structure</h1><a name="task-one"></a>
 <p align="center">
@@ -661,6 +683,11 @@ jobs:
     - name: Run weather.sh script
       run: .github/weather.sh
 
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y wget coreutils git
+
     - name: Set up Git config
       run: |
           git config --global user.name "Barry Egan"
@@ -673,6 +700,7 @@ jobs:
           git push origin main
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
+
 ```
 ****
 
