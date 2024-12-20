@@ -708,7 +708,9 @@ jobs:
 <p align="center">
 </p>
 <p align="center">
+  
 **Create a GitHub Actions Workflow**: In your repository, create a folder called .github/workflows/ (if it doesn't already exist). Inside this folder, create a file called weather-data.yml. This file will define the GitHub Actions workflow.
+
 </p>
 
 *****
@@ -757,7 +759,9 @@ The Touch command was used to create the file called weather-data.yml.
 </p>
 
 <p align="center">
+  
 **Run Daily at 10am**: Use the schedule event with cron to set the script to run once a day at 10am. Include also the workflow_dispatch event so you can test the workflow.
+
 </p>
 
 
@@ -820,7 +824,9 @@ The "workflow_dispatch" command then allows for the manual triggering of the wor
 </p>
 
 <p align="center">
+  
 **Use a Linux Virtual Machine**:  In the workflow file, specify that a Ubuntu virtual machine should be used to run the action.
+
 </p>
 
 *****
@@ -859,7 +865,9 @@ The "runs-on: ubuntu-latest:" designates the virtual machine or environment in w
 </p>
 
 <p align="center">
+  
 **Clone the Repository**:  Have the workflow clone your repository.
+
 </p>
 
 *****
@@ -901,7 +909,9 @@ The "actions/checkout@v3:" action queries the repositories code, in order to all
 </p>
 
 <p align="center">
+  
 **Execute the weather.sh Script**:  Add a step that runs your weather.sh script.
+
 </p>
 
 *****
@@ -951,7 +961,9 @@ To run the script the "run:" command is used to excute the script. The .github/w
 
 
 <p align="center">
+  
   **Commit and Push Changes Back to the Repository**:  Finally, configure the workflow to commit the new weather data and push those changes back to your repository.
+
 </p>
 
 *****
@@ -1009,7 +1021,9 @@ Additionally, it was required to use git config to ensure that git know who is m
 </p>
 
 <p align="center">
-**Test the Workflow**:  Commit and push the workflow to your repository. Check the logs in GitHub to ensure that the weather.sh script runs correctly, that new data is being committed.
+  
+**Test the Workflow** :  Commit and push the workflow to your repository. Check the logs in GitHub to ensure that the weather.sh script runs correctly, that new data is being committed.
+
 </p>
 
 *****
